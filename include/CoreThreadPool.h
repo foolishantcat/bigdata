@@ -11,10 +11,10 @@
 #include <thread>
 #include "IASObject.h"
 #include "ThreadContainer.h"
+
 using namespace std;
 
-#define NUMBER_OF_THREAD 3;
-
+class Scheduler;
 namespace TBAS
 {
     namespace Core
@@ -23,21 +23,29 @@ namespace TBAS
         {
         public:
             CoreThreadPool(){};
-            CoreThreadPool(int number = 3);
+            CoreThreadPool(int number = 2, Scheduler* scheduler);
             virtual ~CoreThreadPool();
+            void Init();
             void AddTask(std::week_ptr<IASObject> asObject);
             void Start();
             void EndCoreThreadPool();
+            bool IsSurvive();
+            ThreadContainer* GetThreadContainer();
+            TaskQueueContainer* GetTaskQueueContainer();
 
         private:
             bool is_survive_;
             int number_of_thread_;
-            ThreadContainer thread_container_;
-            std::thread thread_this_;
+            Scheduler* scheduler_;
 
+            ThreadContainer* thread_container_;
+            TaskQueueContainer* task_queue_container_;
+
+            std::thread thread_this_;
+            std::thread thread_init_;
+            std::mutex survive_mutex_;
             std::mutex task_mutex_;
-            std::mutex listen_mutex_;
-            std::mutex notify_mutex_;
+            std::condition_variable task_cond_;
         };
 
     }

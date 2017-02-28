@@ -6,9 +6,9 @@
 #include "CoreThreadPool.h"
 #include "CoreThread.h"
 
-ThreadContainer::ThreadContainer()
+ThreadContainer::ThreadContainer(CoreThreadPool* pPool)
 {
-
+    thread_pool_ = pPool;
 }
 
 ThreadContainer::~ThreadContainer()
@@ -30,32 +30,43 @@ void ThreadContainer::Assign(int number, CoreThreadPool* pPool)
 {
     for(int i = 0; i < number; i++)
     {
-        CoreThread* thread = new CoreThread(pPool);
-        thread_core_vector_.push_back(thread);
+        CoreThread* thread = new CoreThread(i+1, true, pPool);
+        //thread.detach();
+        Push(thread);
     }
 }
 
-CoreThread* ThreadContainer::Top()
+void ThreadContainer::Push(CoreThread* pThread)
 {
-    return thread_core_vector_.back();
+    thread_core_vector_.push_back(pThread);
 }
 
-void ThreadContainer::Pop()
-{
-    thread_core_vector_.pop_back();
-}
+//CoreThread* ThreadContainer::Top()
+//{
+//    return thread_core_vector_.back();
+//}
+
+//void ThreadContainer::Pop()
+//{
+//    thread_core_vector_.pop_back();
+//}
 
 void ThreadContainer::Erase(CoreThread* pThread)
 {
     thread_core_vector_.erase(std::find(thread_core_vector_.begin(), thread_core_vector_.end(), pThread));
 }
 
-CoreThread* At(int index)
+CoreThread* ThreadContainer::At(int index)
 {
     if(index >= thread_core_vector_.size())
         return NULL;
 
     return thread_core_vector_.at(index);
+}
+
+bool ThreadContainer::IsSurvive()
+{
+    return thread_pool_->IsSurvive();
 }
 
 

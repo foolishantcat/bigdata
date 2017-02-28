@@ -16,18 +16,26 @@ namespace TBAS
         class ThreadContainer
         {
         public:
-            ThreadContainer();
+            ThreadContainer(CoreThreadPool* pPool);
             ~ThreadContainer();
             std::vector<CoreThread*>::size_type Size();
-            void Push(CoreThread* pThread);
             void Assign(int number, CoreThreadPool* pPool);
-            CoreThread* Top();
+            //CoreThread* Top();
             CoreThread* At(int index);
-            void Pop();
-            void Erase(CoreThread* pThread);
+            //void Pop();
+            bool IsSurvive();
+            //std::mutex task_mutex_;
+            std::mutex listen_mutex_;
+            std::mutex notify_mutex_;
+            std::condition_variable listen_cond_;
+            std::condition_variable notify_cond_;
 
         private:
             std::vector<CoreThread*> thread_core_vector_;
+            CoreThreadPool* thread_pool_;
+            //not open for outside
+            void Push(CoreThread* pThread);
+            void Erase(CoreThread* pThread);
             typedef std::vector<CoreThread*> Container;
             typedef Container::iterator Iterator;
         };

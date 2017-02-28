@@ -7,7 +7,6 @@
 
 #include <thread>
 #include "IASObject.h"
-#include "SchedulerGarbo.h"
 #include "CoreThreadPool.h"
 
 namespace TBAS {
@@ -26,6 +25,16 @@ namespace TBAS {
             virtual ~Scheduler();
             static const char* versionInfo;
             static Scheduler* schedulerShared;
+
+            class SchedulerGarbo
+            {
+            public:
+                ~SchedulerGarbo()
+                {
+                    if (Scheduler::schedulerShared)
+                        delete Scheduler::schedulerShared;
+                }
+            };
             static SchedulerGarbo Garbo;
             static CoreThreadPool* threadPool;
         };

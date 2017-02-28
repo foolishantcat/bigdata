@@ -16,6 +16,9 @@ Scheduler::~Scheduler()
 
 }
 
+//For instance and de-construction
+Scheduler *Scheduler::schedulerShared = NULL;
+Scheduler::SchedulerGarbo Scheduler::Garbo;
 //instance core frame
 static Scheduler* Scheduler::instance()
 {
@@ -36,7 +39,8 @@ static Scheduler* Scheduler::instance()
             threadPool = new CoreThreadPool(NUMBER_OF_THREAD);
 
         //start thread pool
-        threadPool->Start();
+        threadPool->Init();
+        threadPool->Run();
 
     } while (0);
 
