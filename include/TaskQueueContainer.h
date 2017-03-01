@@ -2,19 +2,23 @@
 // Created by Administrator on 2017/2/28 0028.
 //
 
-#ifndef CORE_TASKCONTAINER_H
-#define CORE_TASKCONTAINER_H
+#ifndef TASK_QUEUE_CONTAINER_H
+#define TASK_QUEUE_CONTAINER_H
+
+#include <vector>
+#include "TaskQueue.h"
 
 namespace TBAS
 {
     namespace Core
     {
+		class CoreThreadPool;
         class TaskQueueContainer
         {
         public:
             TaskQueueContainer(CoreThreadPool* pThreadPool);
             ~TaskQueueContainer();
-            std::vector<TaskQueue*>::size_type Size();
+            unsigned int Size();
             void Assign(int number, TaskQueueContainer* pContainer);
             TaskQueue* At(int index);
 

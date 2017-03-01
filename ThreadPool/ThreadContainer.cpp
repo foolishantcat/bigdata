@@ -5,6 +5,9 @@
 #include <vector>
 #include "CoreThreadPool.h"
 #include "CoreThread.h"
+#include "ThreadContainer.h"
+
+using namespace TBAS::Core;
 
 ThreadContainer::ThreadContainer(CoreThreadPool* pPool)
 {
@@ -21,7 +24,7 @@ ThreadContainer::~ThreadContainer()
     }
 }
 
-std::vector<CoreThread*>::size_type ThreadContainer::Size()
+unsigned int ThreadContainer::Size()
 {
     return thread_core_vector_.size();
 }
@@ -58,7 +61,7 @@ void ThreadContainer::Erase(CoreThread* pThread)
 
 CoreThread* ThreadContainer::At(int index)
 {
-    if(index >= thread_core_vector_.size())
+    if((unsigned int)index >= thread_core_vector_.size())
         return NULL;
 
     return thread_core_vector_.at(index);

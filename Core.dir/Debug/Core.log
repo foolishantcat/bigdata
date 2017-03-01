@@ -1,0 +1,4 @@
+﻿  CoreThreadPool.cpp
+Scheduler.obj : error LNK2001: 无法解析的外部符号 "private: static char const * const TBAS::Core::Scheduler::versionInfo" (?versionInfo@Scheduler@Core@TBAS@@0PBDB)
+Scheduler.obj : error LNK2001: 无法解析的外部符号 "private: static class TBAS::Core::CoreThreadPool * TBAS::Core::Scheduler::threadPool" (?threadPool@Scheduler@Core@TBAS@@0PAVCoreThreadPool@23@A)
+E:\iMayCode\TBAS\Core\Debug\Core.exe : fatal error LNK1120: 2 个无法解析的外部命令

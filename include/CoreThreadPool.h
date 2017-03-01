@@ -2,8 +2,8 @@
 // Created by Administrator on 2017/2/24 0024.
 //
 
-#ifndef TBAS_CORE_IASTHREADPOOL_H
-#define TBAS_CORE_IASTHREADPOOL_H
+#ifndef CORE_THREAD_POOL_H
+#define CORE_THREAD_POOL_H
 
 #include <list>
 #include <mutex>
@@ -11,27 +11,36 @@
 #include <thread>
 #include "IASObject.h"
 #include "ThreadContainer.h"
+#include "TaskQueueContainer.h"
 
-using namespace std;
+#include "Semaphore.h"
 
-class Scheduler;
 namespace TBAS
 {
     namespace Core
     {
+		class Scheduler;
         class CoreThreadPool
         {
         public:
             CoreThreadPool(){};
-            CoreThreadPool(int number = 2, Scheduler* scheduler);
+			CoreThreadPool(int number);
             virtual ~CoreThreadPool();
             void Init();
-            void AddTask(std::week_ptr<IASObject> asObject);
-            void Start();
+            void AddTask(std::weak_ptr<IASObject> asObject);
+            //void Start();
+			void Run();
             void EndCoreThreadPool();
             bool IsSurvive();
             ThreadContainer* GetThreadContainer();
             TaskQueueContainer* GetTaskQueueContainer();
+
+			std::mutex queue_task_mutex_;
+			std::mutex queue_message_mutex_;
+			std::mutex queue_notify_mutex_;
+
+			Semaphore sem_task_;
+			Semaphore sem_notify_;
 
         private:
             bool is_survive_;
@@ -43,9 +52,9 @@ namespace TBAS
 
             std::thread thread_this_;
             std::thread thread_init_;
+
             std::mutex survive_mutex_;
-            std::mutex task_mutex_;
-            std::condition_variable task_cond_;
+			std::mutex task_mutex_;
         };
 
     }

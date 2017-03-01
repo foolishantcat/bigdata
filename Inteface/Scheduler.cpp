@@ -2,25 +2,19 @@
 // Created by Administrator on 2017/2/24 0024.
 //
 #include "Scheduler.h"
+#include "Common.h"
 #include "CoreThreadPool.h"
+
 using namespace TBAS::Core;
 
-Scheduler::Scheduler()
-{
-
-}
-
-//relaese
-Scheduler::~Scheduler()
-{
-
-}
+Scheduler::Scheduler() {}
+Scheduler::~Scheduler() {}
 
 //For instance and de-construction
 Scheduler *Scheduler::schedulerShared = NULL;
 Scheduler::SchedulerGarbo Scheduler::Garbo;
 //instance core frame
-static Scheduler* Scheduler::instance()
+Scheduler* Scheduler::instance()
 {
     do
     {
@@ -48,7 +42,7 @@ static Scheduler* Scheduler::instance()
 }
 
 //get version
-static const char* Scheduler::version()
+const char* TBAS::Core::Scheduler::version()
 {
     //get version info
 
@@ -56,7 +50,7 @@ static const char* Scheduler::version()
 }
 
 //sync communication
-std::shared_ptr<IASObject> Scheduler::syncCommand(std::shared_ptr<IASObject> arg)
+std::shared_ptr<IASObject> TBAS::Core::Scheduler::syncCommand(std::shared_ptr<IASObject> arg)
 {
     //use multi-thread c++11
 
@@ -65,7 +59,7 @@ std::shared_ptr<IASObject> Scheduler::syncCommand(std::shared_ptr<IASObject> arg
 }
 
 //async communication
-bool Scheduler::asyncCommand(std::shared_ptr<IASObject> arg)
+bool TBAS::Core::Scheduler::asyncCommand(std::shared_ptr<IASObject> arg)
 {
     //use call-back func
 
@@ -73,7 +67,7 @@ bool Scheduler::asyncCommand(std::shared_ptr<IASObject> arg)
 }
 
 //message communication
-bool Scheduler::addEventListen(std::shared_ptr<IASObject> arg)
+bool TBAS::Core::Scheduler::addEventListen(std::shared_ptr<IASObject> arg)
 {
     return false;
 }

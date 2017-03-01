@@ -2,8 +2,17 @@
 // Created by Administrator on 2017/2/27 0027.
 //
 
+#include <list>
+#include <memory>
+#include "IASObject.h"
 #include "CoreThread.h"
 #include "CoreThreadPool.h"
+#include "TaskQueueContainer.h"
+#include "TaskQueue.h"
+#include "CoreLock.h"
+
+using namespace std;
+using namespace TBAS::Core;
 
 int CoreThread::number_of_thread_ = 0;
 
@@ -36,12 +45,24 @@ void CoreThread::StartThread()
     //else
     //    thread_new.join();
 
-    thread_this_ = thread_new;
+    //thread_this_.swap(thread_new);
+	thread_this_ = std::move(thread_new);
+
 }
 
 bool CoreThread::IsSurvive()
 {
-    return thread_container_->IsSurvive();
+    return thread_pool_->IsSurvive();
+}
+
+int CoreThread::GetThreadId()
+{
+	return 0;
+}
+
+void CoreThread::SetIsDetach(bool idDetach)
+{
+
 }
 
 //handle logic
@@ -59,54 +80,56 @@ void CoreThread::Run()
         //get task, and judge type
         TaskQueueContainer* task_queue_container = thread_pool_->GetTaskQueueContainer();
         TaskQueue* queue = NULL;
-        std::list<std::week_ptr<IASObject>> list_tmp;
+        std::list<std::weak_ptr<IASObject>> list_tmp;
         list_tmp.clear();
-        std::week_ptr<IASObject> wk_task = NULL;
+        std::weak_ptr<IASObject> wk_task;
 
-        while(true)
+        if(1 == thread_id_)
         {
+            queue = task_queue_container->At(0);
+            CoreLock lk(&(thread_pool_->queue_task_mutex_));
+            list_tmp.swap(queue->object_list_);
+        }
+        else if(2 == thread_id_)
+        {
+            queue = task_queue_container->At(1);
+            CoreLock lk(&(thread_pool_->queue_task_mutex_));
+            list_tmp.swap(queue->object_list_);
+        }
+        else
+            break;
+
+        while (! list_tmp.empty())
+        {
+            wk_task = list_tmp.front();
+
             if(1 == thread_id_)
-            {
-                queue = task_queue_container->At(0);
-                wk_task = queue->Top();
-                HandleTask(wk_task);
-            }
+                HandleTask(wk_task);        //logic
             else if(2 == thread_id_)
-            {
-                queue = task_queue_container->At(1);
-                wk_task = queue->Top();
-                HandleListen(wk_task);
-            }
-            //else if(3 == thread_id_)
-            //{
-            //    queue = task_queue_container->At(2);
-            //    wk_task = queue->Top();
-            //    HandleNotify(wk_task);
-            //}
+                HandleMessage(wk_task);      //logic
             else
                 break;
+
+            list_tmp.pop_front();
         }
-
-        //logic
-
 
         //sem_wait
         {
-            std::unique_lock<std::mutex> lk(cv_m);
-            std::cout << "Waiting... \n";
             if(1 == thread_id_)
-                cv.wait(lk, []{return i == 1;});
+            {
+				thread_pool_->sem_task_.Wait();
+            }
             else if(2 == thread_id_)
-                cv.wait(lk, []{return i == 1;});
-            //else if(3 == thread_id_)
-            //    cv.wait(lk, []{return i == 1;});
+            {
+                thread_pool_->sem_notify_.Wait();
+            }
             else
                 break;
         }
     }
 }
 
-void CoreThread::HandleTask(std::week_ptr<IASObject> asObject)
+void CoreThread::HandleTask(std::weak_ptr<IASObject> asObject)
 {
     //call lua
 
@@ -126,7 +149,7 @@ void CoreThread::HandleTask(std::week_ptr<IASObject> asObject)
 //}
 
 //excute call-back function
-void CoreThread::HandleNotify(std::week_ptr<IASObject> asObject)
+void CoreThread::HandleMessage(std::weak_ptr<IASObject> asObject)
 {
     //pop Message queue
 

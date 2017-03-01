@@ -2,8 +2,8 @@
 // Created by Administrator on 2017/2/27 0027.
 //
 
-#ifndef CORE_CORELOCK_H
-#define CORE_CORELOCK_H
+#ifndef CORELOCK_H
+#define CORELOCK_H
 
 #include <mutex>
 

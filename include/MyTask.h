@@ -2,17 +2,18 @@
 // Created by Administrator on 2017/2/27 0027.
 //
 
-#ifndef CORE_MYTASK_H_H
-#define CORE_MYTASK_H_H
+#ifndef MYTASK_H_H
+#define MYTASK_H_H
 
 #include <string>
+#include <memory>
 #include "IASObject.h"
 
 namespace TBAS
 {
     namespace Core
     {
-        class MyTask : public IASObject, public enable_shared_from_this<MyTask>
+        class MyTask : public IASObject, public std::enable_shared_from_this<MyTask>
         {
         public:
             MyTask();

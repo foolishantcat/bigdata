@@ -2,33 +2,28 @@
 // Created by Administrator on 2017/2/27 0027.
 //
 
-#ifndef CORE_THREADCONTAINER_H
-#define CORE_THREADCONTAINER_H
+#ifndef THREADCONTAINER_H
+#define THREADCONTAINER_H
 
 #include <vector>
 #include "CoreThread.h"
-#include "CoreThreadPool.h"
 
 namespace TBAS
 {
     namespace Core
     {
+		class CoreThreadPool;
         class ThreadContainer
         {
         public:
             ThreadContainer(CoreThreadPool* pPool);
             ~ThreadContainer();
-            std::vector<CoreThread*>::size_type Size();
+            unsigned int Size();
             void Assign(int number, CoreThreadPool* pPool);
             //CoreThread* Top();
             CoreThread* At(int index);
             //void Pop();
             bool IsSurvive();
-            //std::mutex task_mutex_;
-            std::mutex listen_mutex_;
-            std::mutex notify_mutex_;
-            std::condition_variable listen_cond_;
-            std::condition_variable notify_cond_;
 
         private:
             std::vector<CoreThread*> thread_core_vector_;

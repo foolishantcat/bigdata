@@ -5,6 +5,8 @@
 #include <mutex>
 #include "CoreLock.h"
 
+using namespace TBAS::Core;
+
 CoreLock::CoreLock(std::mutex* mMutex)
 {
     mutex_ = mMutex;

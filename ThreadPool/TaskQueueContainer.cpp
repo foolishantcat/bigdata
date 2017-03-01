@@ -2,12 +2,17 @@
 // Created by Administrator on 2017/2/28 0028.
 //
 
+#include <algorithm>
 #include "TaskQueue.h"
 #include "TaskQueueContainer.h"
+#include "CoreThreadPool.h"
 
-TaskQueueContainer::TaskQueueContainer(CoreThreadPool* pThreadPool)
+using namespace std;
+using namespace TBAS::Core;
+
+TaskQueueContainer::TaskQueueContainer(TBAS::Core::CoreThreadPool* pThreadPool)
 {
-    task_queue_container_.clear();
+	task_queue_container_.clear();
     number_of_task_queue_ = 0;
     thread_pool_ = pThreadPool;
 }
@@ -18,9 +23,13 @@ TaskQueueContainer::~TaskQueueContainer()
         it != task_queue_container_.end();
         it++)
     {
-        cout << i++ << endl;
         delete *it;
     }
+}
+
+unsigned int TaskQueueContainer::Size()
+{
+	return task_queue_container_.size();
 }
 
 void TaskQueueContainer::Assign(int number, TaskQueueContainer* container)
@@ -44,5 +53,5 @@ TaskQueue* TaskQueueContainer::At(int index)
 
 void TaskQueueContainer::Erase(TaskQueue* pQueue)
 {
-    task_queue_container_.erase(std::find(task_queue_container_.begin(), task_queue_container_, pQueue));
+    //task_queue_container_.erase(std::find(task_queue_container_.begin(), task_queue_container_, pQueue));
 }

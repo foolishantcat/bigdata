@@ -2,12 +2,15 @@
 // Created by Administrator on 2017/2/24 0024.
 //
 
-#ifndef TBAS_CORE_TBAS_CORE_H
-#define TBAS_CORE_TBAS_CORE_H
+#ifndef SCHEDULER_H
+#define SCHEDULER_H
 
 #include <thread>
+#include <memory>
 #include "IASObject.h"
 #include "CoreThreadPool.h"
+
+//class TBAS::Core::CoreThreadPool;
 
 namespace TBAS {
     namespace Core {
@@ -38,7 +41,7 @@ namespace TBAS {
             static SchedulerGarbo Garbo;
             static CoreThreadPool* threadPool;
         };
-    } //end for namespace Core
+	} //end for namespace Core
 
 } //end for namespace TBAS
 

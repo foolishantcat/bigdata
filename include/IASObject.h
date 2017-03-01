@@ -4,8 +4,10 @@
 
 //Link Task
 
-#ifndef TBAS_CORE_IAS_CORE_TYPE_H
-#define TBAS_CORE_IAS_CORE_TYPE_H
+#ifndef IAS_OBJECT_H
+#define IAS_OBJECT_H
+
+#include "json.hpp"
 
 namespace TBAS
 {

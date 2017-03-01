@@ -4,6 +4,9 @@
 
 #include "Common.h"
 #include "TaskQueue.h"
+#include "CoreLock.h"
+
+using namespace TBAS::Core;
 
 TaskQueue::TaskQueue(TaskQueueContainer* container)
 {
@@ -17,12 +20,12 @@ TaskQueue::~TaskQueue()
 
 }
 
-int TaskQueue::Size()
+unsigned int TaskQueue::Size()
 {
     return object_list_.size();
 }
 
-void TaskQueue::Push(std::week_ptr<IASObject> asObject)
+void TaskQueue::Push(std::weak_ptr<IASObject> asObject)
 {
     do
     {
@@ -31,13 +34,13 @@ void TaskQueue::Push(std::week_ptr<IASObject> asObject)
         CHECK_WEEK_PTR_VALID(asObject);
 
         //add mutex lock
-        CoreLock Lock(&task_queue_container_.task_mutex_);
+        //CoreLock Lock(&(task_queue_container_->task_mutex_));
         object_list_.push_back(asObject);
 
     } while(0);
 }
 
-std::week_ptr<IASObject> TaskQueue::Top()
+std::weak_ptr<IASObject> TaskQueue::Top()
 {
     return object_list_.front();
 }
@@ -52,3 +55,8 @@ bool TaskQueue::Empty()
 {
     return object_list_.empty();
 }
+
+//std::list<std::week_ptr<IASObject>> TaskQueue::GetTaskList()
+//{
+//    return object_list_;
+//}
