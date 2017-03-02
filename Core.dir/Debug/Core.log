@@ -1,4 +1,7 @@
-﻿  CoreThreadPool.cpp
-Scheduler.obj : error LNK2001: 无法解析的外部符号 "private: static char const * const TBAS::Core::Scheduler::versionInfo" (?versionInfo@Scheduler@Core@TBAS@@0PBDB)
-Scheduler.obj : error LNK2001: 无法解析的外部符号 "private: static class TBAS::Core::CoreThreadPool * TBAS::Core::Scheduler::threadPool" (?threadPool@Scheduler@Core@TBAS@@0PAVCoreThreadPool@23@A)
-E:\iMayCode\TBAS\Core\Debug\Core.exe : fatal error LNK1120: 2 个无法解析的外部命令
+﻿  CoreThread.cpp
+e:\imaycode\tbas\core\luawrapper\include\misc/exception.hpp(44): error C2011: “std::nested_exception”:“class”类型重定义
+  D:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\exception(378): note: 参见“std::nested_exception”的声明
+e:\imaycode\tbas\core\luawrapper\include\misc/exception.hpp(74): error C2995: “void std::throw_with_nested(_Ty &&)”: 函数模板已经定义
+  D:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\exception(436): note: 参见“std::throw_with_nested”的声明
+e:\imaycode\tbas\core\luawrapper\include\misc/exception.hpp(81): error C2995: “void std::rethrow_if_nested(const _Ty &)”: 函数模板已经定义
+  D:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\exception(464): note: 参见“std::rethrow_if_nested”的声明

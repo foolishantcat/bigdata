@@ -17,16 +17,24 @@ namespace TBAS
         public:
             //call back
             std::function<void(std::shared_ptr<IASObject> asObject)> onCommandTaskSuccess;
-            nlohmann::json jsonData;
+            nlohmann::json jsonData;			//ignore this
+
+			virtual void setError(std::string errorInfo, int errorNumber) {};
             virtual std::string errorInfo(){ return "";};
             virtual int errorNumber(){ return 0;};
+
+			virtual void setCommandString(std::string commandStr) {};
             virtual std::string commandString() { return "";};
+
             virtual void setData(void *data) {} ;
             virtual void * const data(){return nullptr;};
+
+			void setStringData(std::string strData) {};
+			std::string stringData() { return ""; };
             /*! Virtual destructor */
             virtual ~IASObject() {};
         };
     }
 }
 
-#endif //TBAS_CORE_IAS_CORE_TYPE_H
+#endif //IAS_OBJECT_H

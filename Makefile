@@ -123,6 +123,33 @@ Core/fast:
 	$(MAKE) -f CMakeFiles/Core.dir/build.make CMakeFiles/Core.dir/build
 .PHONY : Core/fast
 
+Inteface/Scheduler.o: Inteface/Scheduler.cpp.o
+
+.PHONY : Inteface/Scheduler.o
+
+# target to build an object file
+Inteface/Scheduler.cpp.o:
+	$(MAKE) -f CMakeFiles/Core.dir/build.make CMakeFiles/Core.dir/Inteface/Scheduler.cpp.o
+.PHONY : Inteface/Scheduler.cpp.o
+
+Inteface/Scheduler.i: Inteface/Scheduler.cpp.i
+
+.PHONY : Inteface/Scheduler.i
+
+# target to preprocess a source file
+Inteface/Scheduler.cpp.i:
+	$(MAKE) -f CMakeFiles/Core.dir/build.make CMakeFiles/Core.dir/Inteface/Scheduler.cpp.i
+.PHONY : Inteface/Scheduler.cpp.i
+
+Inteface/Scheduler.s: Inteface/Scheduler.cpp.s
+
+.PHONY : Inteface/Scheduler.s
+
+# target to generate assembly for a file
+Inteface/Scheduler.cpp.s:
+	$(MAKE) -f CMakeFiles/Core.dir/build.make CMakeFiles/Core.dir/Inteface/Scheduler.cpp.s
+.PHONY : Inteface/Scheduler.cpp.s
+
 ThreadPool/CoreLock.o: ThreadPool/CoreLock.cpp.o
 
 .PHONY : ThreadPool/CoreLock.o
@@ -203,6 +230,33 @@ ThreadPool/CoreThreadPool.s: ThreadPool/CoreThreadPool.cpp.s
 ThreadPool/CoreThreadPool.cpp.s:
 	$(MAKE) -f CMakeFiles/Core.dir/build.make CMakeFiles/Core.dir/ThreadPool/CoreThreadPool.cpp.s
 .PHONY : ThreadPool/CoreThreadPool.cpp.s
+
+ThreadPool/MyTask.o: ThreadPool/MyTask.cpp.o
+
+.PHONY : ThreadPool/MyTask.o
+
+# target to build an object file
+ThreadPool/MyTask.cpp.o:
+	$(MAKE) -f CMakeFiles/Core.dir/build.make CMakeFiles/Core.dir/ThreadPool/MyTask.cpp.o
+.PHONY : ThreadPool/MyTask.cpp.o
+
+ThreadPool/MyTask.i: ThreadPool/MyTask.cpp.i
+
+.PHONY : ThreadPool/MyTask.i
+
+# target to preprocess a source file
+ThreadPool/MyTask.cpp.i:
+	$(MAKE) -f CMakeFiles/Core.dir/build.make CMakeFiles/Core.dir/ThreadPool/MyTask.cpp.i
+.PHONY : ThreadPool/MyTask.cpp.i
+
+ThreadPool/MyTask.s: ThreadPool/MyTask.cpp.s
+
+.PHONY : ThreadPool/MyTask.s
+
+# target to generate assembly for a file
+ThreadPool/MyTask.cpp.s:
+	$(MAKE) -f CMakeFiles/Core.dir/build.make CMakeFiles/Core.dir/ThreadPool/MyTask.cpp.s
+.PHONY : ThreadPool/MyTask.cpp.s
 
 ThreadPool/TaskQueue.o: ThreadPool/TaskQueue.cpp.o
 
@@ -321,6 +375,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Core"
+	@echo "... Inteface/Scheduler.o"
+	@echo "... Inteface/Scheduler.i"
+	@echo "... Inteface/Scheduler.s"
 	@echo "... ThreadPool/CoreLock.o"
 	@echo "... ThreadPool/CoreLock.i"
 	@echo "... ThreadPool/CoreLock.s"
@@ -330,6 +387,9 @@ help:
 	@echo "... ThreadPool/CoreThreadPool.o"
 	@echo "... ThreadPool/CoreThreadPool.i"
 	@echo "... ThreadPool/CoreThreadPool.s"
+	@echo "... ThreadPool/MyTask.o"
+	@echo "... ThreadPool/MyTask.i"
+	@echo "... ThreadPool/MyTask.s"
 	@echo "... ThreadPool/TaskQueue.o"
 	@echo "... ThreadPool/TaskQueue.i"
 	@echo "... ThreadPool/TaskQueue.s"

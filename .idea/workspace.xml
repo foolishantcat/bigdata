@@ -20,9 +20,12 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Inteface/Scheduler.cpp" afterPath="$PROJECT_DIR$/Inteface/Scheduler.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ThreadPool/CoreLock.cpp" afterPath="$PROJECT_DIR$/ThreadPool/CoreLock.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ThreadPool/CoreThread.cpp" afterPath="$PROJECT_DIR$/ThreadPool/CoreThread.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ThreadPool/CoreThreadPool.cpp" afterPath="$PROJECT_DIR$/ThreadPool/CoreThreadPool.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ThreadPool/MyTask.cpp" afterPath="$PROJECT_DIR$/ThreadPool/MyTask.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ThreadPool/ThreadContainer.cpp" afterPath="$PROJECT_DIR$/ThreadPool/ThreadContainer.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/CoreLock.h" afterPath="$PROJECT_DIR$/include/CoreLock.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/CoreThread.h" afterPath="$PROJECT_DIR$/include/CoreThread.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/CoreThreadPool.h" afterPath="$PROJECT_DIR$/include/CoreThreadPool.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/IASObject.h" afterPath="$PROJECT_DIR$/include/IASObject.h" />
@@ -48,19 +51,27 @@
       <file leaf-file-name="CoreThreadPool.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/include/CoreThreadPool.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="361">
+              <caret line="33" column="37" lean-forward="false" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="37" />
+              <folding>
+                <marker date="1488438432226" expanded="true" signature="302:1362" ph="{...}" />
+                <marker date="1488438432226" expanded="true" signature="327:1359" ph="{...}" />
+                <marker date="1488438432226" expanded="true" signature="385:1351" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Semaphore.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/include/Semaphore.h">
+      <file leaf-file-name="CoreThread.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/include/CoreThread.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="518">
+              <caret line="32" column="41" lean-forward="false" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
+              <folding>
+                <marker date="1488438853146" expanded="true" signature="170:1308" ph="{...}" />
+                <marker date="1488438853146" expanded="true" signature="195:1306" ph="{...}" />
+                <marker date="1488438853146" expanded="true" signature="254:1299" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -68,19 +79,25 @@
       <file leaf-file-name="CoreThreadPool.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ThreadPool/CoreThreadPool.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1824">
-              <caret line="96" column="0" lean-forward="false" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="499">
+              <caret line="93" column="3" lean-forward="false" selection-start-line="93" selection-start-column="3" selection-end-line="93" selection-end-column="3" />
+              <folding>
+                <marker date="1488438437280" expanded="true" signature="313:460" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyTask.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ThreadPool/MyTask.cpp">
+      <file leaf-file-name="MyTask.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/include/MyTask.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="532">
-              <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="437">
+              <caret line="23" column="36" lean-forward="false" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
+              <folding>
+                <marker date="1488441193717" expanded="true" signature="168:939" ph="{...}" />
+                <marker date="1488441193717" expanded="true" signature="193:937" ph="{...}" />
+                <marker date="1488441193717" expanded="true" signature="288:930" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -88,29 +105,56 @@
       <file leaf-file-name="CoreThread.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ThreadPool/CoreThread.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1501">
-              <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="480">
+              <caret line="69" column="23" lean-forward="false" selection-start-line="69" selection-start-column="23" selection-end-line="69" selection-end-column="23" />
+              <folding>
+                <marker date="1488438764655" expanded="true" signature="3436:3437" ph="//..." />
+                <marker date="1488438764655" expanded="true" signature="3533:3682" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="6" column="28" lean-forward="false" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
+            <state relative-caret-position="152">
+              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Scheduler.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/include/Scheduler.h">
+      <file leaf-file-name="ShareQueue.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/include/ShareQueue.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WeakQueue.h" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/include/WeakQueue.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="114">
+              <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TaskQueue.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/include/TaskQueue.h">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="266">
-              <caret line="14" column="24" lean-forward="false" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
-              <folding />
+              <caret line="14" column="4" lean-forward="false" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+              <folding>
+                <marker date="1488439707148" expanded="true" signature="170:797" ph="{...}" />
+                <marker date="1488439707148" expanded="true" signature="195:795" ph="{...}" />
+                <marker date="1488439707148" expanded="true" signature="257:788" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -119,8 +163,12 @@
         <entry file="file://$PROJECT_DIR$/include/IASObject.h">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="133">
-              <caret line="7" column="32" lean-forward="false" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
-              <folding />
+              <caret line="7" column="20" lean-forward="false" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+              <folding>
+                <marker date="1488441295245" expanded="true" signature="146:959" ph="{...}" />
+                <marker date="1488441295245" expanded="true" signature="171:957" ph="{...}" />
+                <marker date="1488441295245" expanded="true" signature="196:950" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -146,22 +194,23 @@
         <option value="$PROJECT_DIR$/ThreadPool/TaskQueueContainer.cpp" />
         <option value="$PROJECT_DIR$/ThreadPool/ThreadContainer.cpp" />
         <option value="$PROJECT_DIR$/include/TaskQueueContainer.h" />
-        <option value="$PROJECT_DIR$/ThreadPool/CoreThreadPool.cpp" />
         <option value="$PROJECT_DIR$/include/Common.h" />
         <option value="$PROJECT_DIR$/Inteface/Scheduler.cpp" />
         <option value="$PROJECT_DIR$/include/MyTask.h" />
         <option value="$PROJECT_DIR$/ThreadPool/TaskQueue.cpp" />
         <option value="$PROJECT_DIR$/include/TaskQueue.h" />
-        <option value="$PROJECT_DIR$/include/CoreThreadPool.h" />
-        <option value="$PROJECT_DIR$/include/CoreThread.h" />
         <option value="$PROJECT_DIR$/include/ThreadContainer.h" />
         <option value="$PROJECT_DIR$/include/Semaphore.h" />
-        <option value="$PROJECT_DIR$/ThreadPool/CoreThread.cpp" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/include/IASObject.h" />
+        <option value="$PROJECT_DIR$/include/CoreThreadPool.h" />
+        <option value="$PROJECT_DIR$/include/CoreThread.h" />
+        <option value="$PROJECT_DIR$/ThreadPool/CoreThread.cpp" />
+        <option value="$PROJECT_DIR$/ThreadPool/CoreThreadPool.cpp" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
       </list>
     </option>
   </component>
+  <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
@@ -208,25 +257,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="json" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Core" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="json" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
+              <option name="myItemId" value="ThreadPool" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -447,11 +478,12 @@
       <workItem from="1488338478229" duration="1480000" />
       <workItem from="1488340622063" duration="843000" />
       <workItem from="1488341715198" duration="13000" />
+      <workItem from="1488422100091" duration="3851000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58178000" />
+    <option name="totallyTimeSpent" value="62029000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -466,9 +498,9 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12579957" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12686567" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.49573562" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="CMake" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13976164" sideWeight="0.49583334" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13976164" sideWeight="0.49583334" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="LuaJ" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14059196" sideWeight="0.50416666" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27302274" sideWeight="0.4978678" order="7" side_tool="false" content_ui="tabs" />
@@ -516,25 +548,15 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ThreadPool/ThreadContainer.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="28" column="31" lean-forward="false" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ThreadPool/TaskQueueContainer.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="29" column="53" lean-forward="false" selection-start-line="29" selection-start-column="53" selection-end-line="29" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/include/CoreThreadPool.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="646">
           <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1488438432226" expanded="true" signature="302:1362" ph="{...}" />
+            <marker date="1488438432226" expanded="true" signature="327:1359" ph="{...}" />
+            <marker date="1488438432226" expanded="true" signature="385:1351" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -557,7 +579,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1824">
           <caret line="96" column="0" lean-forward="false" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1488438437280" expanded="true" signature="313:460" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -573,7 +597,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1488438764655" expanded="true" signature="3436:3437" ph="//..." />
+            <marker date="1488438764655" expanded="true" signature="3533:3682" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -610,7 +637,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="513">
           <caret line="27" column="38" lean-forward="false" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
-          <folding />
+          <folding>
+            <marker date="1488438432226" expanded="true" signature="302:1362" ph="{...}" />
+            <marker date="1488438432226" expanded="true" signature="327:1359" ph="{...}" />
+            <marker date="1488438432226" expanded="true" signature="385:1351" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -618,7 +649,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="532">
           <caret line="28" column="4" lean-forward="false" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
-          <folding />
+          <folding>
+            <marker date="1488438437280" expanded="true" signature="313:460" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -647,7 +680,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1488438764655" expanded="true" signature="3436:3437" ph="//..." />
+            <marker date="1488438764655" expanded="true" signature="3533:3682" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -700,13 +736,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Inteface/Scheduler.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1121">
-          <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ThreadPool/CoreLock.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -718,27 +747,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
           <caret line="20" column="30" lean-forward="false" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/CoreThread.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="19" column="24" lean-forward="false" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/MyTask.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="23" column="36" lean-forward="false" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/TaskQueue.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="24" column="25" lean-forward="false" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -779,24 +787,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ThreadPool/MyTask.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ThreadPool/CoreThreadPool.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1824">
-          <caret line="96" column="0" lean-forward="false" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ThreadPool/CoreThread.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1501">
-          <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+        <state relative-caret-position="684">
+          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -822,14 +814,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/CoreThreadPool.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/include/Semaphore.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
@@ -840,24 +824,126 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/include/Scheduler.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="24" lean-forward="false" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
+        <state relative-caret-position="323">
+          <caret line="17" column="24" lean-forward="false" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Inteface/Scheduler.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="727">
+          <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+          <folding>
+            <marker date="1488424459559" expanded="true" signature="477:962" ph="{...}" />
+            <marker date="1488424459559" expanded="true" signature="1011:1062" ph="{...}" />
+            <marker date="1488424459559" expanded="true" signature="1167:1221" ph="{...}" />
+            <marker date="1488424459559" expanded="true" signature="1306:1353" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/TaskQueue.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="4" lean-forward="false" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+          <folding>
+            <marker date="1488439707148" expanded="true" signature="170:797" ph="{...}" />
+            <marker date="1488439707148" expanded="true" signature="195:795" ph="{...}" />
+            <marker date="1488439707148" expanded="true" signature="257:788" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/MyTask.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="23" column="36" lean-forward="false" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
+          <folding>
+            <marker date="1488441193717" expanded="true" signature="168:939" ph="{...}" />
+            <marker date="1488441193717" expanded="true" signature="193:937" ph="{...}" />
+            <marker date="1488441193717" expanded="true" signature="288:930" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/include/IASObject.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
-          <caret line="7" column="32" lean-forward="false" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
-          <folding />
+          <caret line="7" column="20" lean-forward="false" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+          <folding>
+            <marker date="1488441295245" expanded="true" signature="146:959" ph="{...}" />
+            <marker date="1488441295245" expanded="true" signature="171:957" ph="{...}" />
+            <marker date="1488441295245" expanded="true" signature="196:950" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/CoreThread.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="518">
+          <caret line="32" column="41" lean-forward="false" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
+          <folding>
+            <marker date="1488438853146" expanded="true" signature="170:1308" ph="{...}" />
+            <marker date="1488438853146" expanded="true" signature="195:1306" ph="{...}" />
+            <marker date="1488438853146" expanded="true" signature="254:1299" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ThreadPool/CoreThread.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="69" column="23" lean-forward="false" selection-start-line="69" selection-start-column="23" selection-end-line="69" selection-end-column="23" />
+          <folding>
+            <marker date="1488438764655" expanded="true" signature="3436:3437" ph="//..." />
+            <marker date="1488438764655" expanded="true" signature="3533:3682" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/CoreThreadPool.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="33" column="37" lean-forward="false" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="37" />
+          <folding>
+            <marker date="1488438432226" expanded="true" signature="302:1362" ph="{...}" />
+            <marker date="1488438432226" expanded="true" signature="327:1359" ph="{...}" />
+            <marker date="1488438432226" expanded="true" signature="385:1351" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ThreadPool/CoreThreadPool.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="499">
+          <caret line="93" column="3" lean-forward="false" selection-start-line="93" selection-start-column="3" selection-end-line="93" selection-end-column="3" />
+          <folding>
+            <marker date="1488438437280" expanded="true" signature="313:460" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/ShareQueue.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/WeakQueue.h">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
-          <caret line="6" column="28" lean-forward="false" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
+          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
         </state>
       </provider>

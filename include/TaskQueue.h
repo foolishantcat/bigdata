@@ -16,6 +16,8 @@ namespace TBAS
 		class TaskQueueContainer;
         class TaskQueue
         {
+			friend class TaskQueueContainer;
+			friend class CoreThread;
         public:
             TaskQueue(TaskQueueContainer* container);
             ~TaskQueue();
@@ -24,14 +26,15 @@ namespace TBAS
             std::weak_ptr<IASObject> Top();
             void Pop();
             bool Empty();
-            //std::list<std::week_ptr<IASObject>> GetTaskList();
-            std::list<std::weak_ptr<IASObject>> object_list_;
 
         private:
             int number_of_task_;
             TaskQueueContainer* task_queue_container_;
+			std::list<std::shared_ptr<IASObject>> object_list_;
+			std::list<std::weak_ptr<IASObject>> wk_object_list_;		//for notify queue
+			bool is_weak_ptr_;
         };
     }
 }
 
-#endif //CORE_OBJECTCONTAINER_H
+#endif //TASK_QUQUE_H

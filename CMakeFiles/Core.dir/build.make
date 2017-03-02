@@ -81,9 +81,57 @@ CMakeFiles/Core.dir/main.cpp.o.provides: CMakeFiles/Core.dir/main.cpp.o.requires
 CMakeFiles/Core.dir/main.cpp.o.provides.build: CMakeFiles/Core.dir/main.cpp.o
 
 
+CMakeFiles/Core.dir/Inteface/Scheduler.cpp.o: CMakeFiles/Core.dir/flags.make
+CMakeFiles/Core.dir/Inteface/Scheduler.cpp.o: Inteface/Scheduler.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cyc/Core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Core.dir/Inteface/Scheduler.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Core.dir/Inteface/Scheduler.cpp.o -c /home/cyc/Core/Inteface/Scheduler.cpp
+
+CMakeFiles/Core.dir/Inteface/Scheduler.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Core.dir/Inteface/Scheduler.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cyc/Core/Inteface/Scheduler.cpp > CMakeFiles/Core.dir/Inteface/Scheduler.cpp.i
+
+CMakeFiles/Core.dir/Inteface/Scheduler.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Core.dir/Inteface/Scheduler.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cyc/Core/Inteface/Scheduler.cpp -o CMakeFiles/Core.dir/Inteface/Scheduler.cpp.s
+
+CMakeFiles/Core.dir/Inteface/Scheduler.cpp.o.requires:
+
+.PHONY : CMakeFiles/Core.dir/Inteface/Scheduler.cpp.o.requires
+
+CMakeFiles/Core.dir/Inteface/Scheduler.cpp.o.provides: CMakeFiles/Core.dir/Inteface/Scheduler.cpp.o.requires
+	$(MAKE) -f CMakeFiles/Core.dir/build.make CMakeFiles/Core.dir/Inteface/Scheduler.cpp.o.provides.build
+.PHONY : CMakeFiles/Core.dir/Inteface/Scheduler.cpp.o.provides
+
+CMakeFiles/Core.dir/Inteface/Scheduler.cpp.o.provides.build: CMakeFiles/Core.dir/Inteface/Scheduler.cpp.o
+
+
+CMakeFiles/Core.dir/ThreadPool/MyTask.cpp.o: CMakeFiles/Core.dir/flags.make
+CMakeFiles/Core.dir/ThreadPool/MyTask.cpp.o: ThreadPool/MyTask.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cyc/Core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Core.dir/ThreadPool/MyTask.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Core.dir/ThreadPool/MyTask.cpp.o -c /home/cyc/Core/ThreadPool/MyTask.cpp
+
+CMakeFiles/Core.dir/ThreadPool/MyTask.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Core.dir/ThreadPool/MyTask.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cyc/Core/ThreadPool/MyTask.cpp > CMakeFiles/Core.dir/ThreadPool/MyTask.cpp.i
+
+CMakeFiles/Core.dir/ThreadPool/MyTask.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Core.dir/ThreadPool/MyTask.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cyc/Core/ThreadPool/MyTask.cpp -o CMakeFiles/Core.dir/ThreadPool/MyTask.cpp.s
+
+CMakeFiles/Core.dir/ThreadPool/MyTask.cpp.o.requires:
+
+.PHONY : CMakeFiles/Core.dir/ThreadPool/MyTask.cpp.o.requires
+
+CMakeFiles/Core.dir/ThreadPool/MyTask.cpp.o.provides: CMakeFiles/Core.dir/ThreadPool/MyTask.cpp.o.requires
+	$(MAKE) -f CMakeFiles/Core.dir/build.make CMakeFiles/Core.dir/ThreadPool/MyTask.cpp.o.provides.build
+.PHONY : CMakeFiles/Core.dir/ThreadPool/MyTask.cpp.o.provides
+
+CMakeFiles/Core.dir/ThreadPool/MyTask.cpp.o.provides.build: CMakeFiles/Core.dir/ThreadPool/MyTask.cpp.o
+
+
 CMakeFiles/Core.dir/ThreadPool/CoreThread.cpp.o: CMakeFiles/Core.dir/flags.make
 CMakeFiles/Core.dir/ThreadPool/CoreThread.cpp.o: ThreadPool/CoreThread.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cyc/Core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Core.dir/ThreadPool/CoreThread.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cyc/Core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Core.dir/ThreadPool/CoreThread.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Core.dir/ThreadPool/CoreThread.cpp.o -c /home/cyc/Core/ThreadPool/CoreThread.cpp
 
 CMakeFiles/Core.dir/ThreadPool/CoreThread.cpp.i: cmake_force
@@ -107,7 +155,7 @@ CMakeFiles/Core.dir/ThreadPool/CoreThread.cpp.o.provides.build: CMakeFiles/Core.
 
 CMakeFiles/Core.dir/ThreadPool/CoreThreadPool.cpp.o: CMakeFiles/Core.dir/flags.make
 CMakeFiles/Core.dir/ThreadPool/CoreThreadPool.cpp.o: ThreadPool/CoreThreadPool.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cyc/Core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Core.dir/ThreadPool/CoreThreadPool.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cyc/Core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Core.dir/ThreadPool/CoreThreadPool.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Core.dir/ThreadPool/CoreThreadPool.cpp.o -c /home/cyc/Core/ThreadPool/CoreThreadPool.cpp
 
 CMakeFiles/Core.dir/ThreadPool/CoreThreadPool.cpp.i: cmake_force
@@ -131,7 +179,7 @@ CMakeFiles/Core.dir/ThreadPool/CoreThreadPool.cpp.o.provides.build: CMakeFiles/C
 
 CMakeFiles/Core.dir/ThreadPool/CoreLock.cpp.o: CMakeFiles/Core.dir/flags.make
 CMakeFiles/Core.dir/ThreadPool/CoreLock.cpp.o: ThreadPool/CoreLock.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cyc/Core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Core.dir/ThreadPool/CoreLock.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cyc/Core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Core.dir/ThreadPool/CoreLock.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Core.dir/ThreadPool/CoreLock.cpp.o -c /home/cyc/Core/ThreadPool/CoreLock.cpp
 
 CMakeFiles/Core.dir/ThreadPool/CoreLock.cpp.i: cmake_force
@@ -155,7 +203,7 @@ CMakeFiles/Core.dir/ThreadPool/CoreLock.cpp.o.provides.build: CMakeFiles/Core.di
 
 CMakeFiles/Core.dir/ThreadPool/ThreadContainer.cpp.o: CMakeFiles/Core.dir/flags.make
 CMakeFiles/Core.dir/ThreadPool/ThreadContainer.cpp.o: ThreadPool/ThreadContainer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cyc/Core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Core.dir/ThreadPool/ThreadContainer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cyc/Core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Core.dir/ThreadPool/ThreadContainer.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Core.dir/ThreadPool/ThreadContainer.cpp.o -c /home/cyc/Core/ThreadPool/ThreadContainer.cpp
 
 CMakeFiles/Core.dir/ThreadPool/ThreadContainer.cpp.i: cmake_force
@@ -179,7 +227,7 @@ CMakeFiles/Core.dir/ThreadPool/ThreadContainer.cpp.o.provides.build: CMakeFiles/
 
 CMakeFiles/Core.dir/ThreadPool/TaskQueue.cpp.o: CMakeFiles/Core.dir/flags.make
 CMakeFiles/Core.dir/ThreadPool/TaskQueue.cpp.o: ThreadPool/TaskQueue.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cyc/Core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Core.dir/ThreadPool/TaskQueue.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cyc/Core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Core.dir/ThreadPool/TaskQueue.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Core.dir/ThreadPool/TaskQueue.cpp.o -c /home/cyc/Core/ThreadPool/TaskQueue.cpp
 
 CMakeFiles/Core.dir/ThreadPool/TaskQueue.cpp.i: cmake_force
@@ -203,7 +251,7 @@ CMakeFiles/Core.dir/ThreadPool/TaskQueue.cpp.o.provides.build: CMakeFiles/Core.d
 
 CMakeFiles/Core.dir/ThreadPool/TaskQueueContainer.cpp.o: CMakeFiles/Core.dir/flags.make
 CMakeFiles/Core.dir/ThreadPool/TaskQueueContainer.cpp.o: ThreadPool/TaskQueueContainer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cyc/Core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Core.dir/ThreadPool/TaskQueueContainer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cyc/Core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Core.dir/ThreadPool/TaskQueueContainer.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Core.dir/ThreadPool/TaskQueueContainer.cpp.o -c /home/cyc/Core/ThreadPool/TaskQueueContainer.cpp
 
 CMakeFiles/Core.dir/ThreadPool/TaskQueueContainer.cpp.i: cmake_force
@@ -228,6 +276,8 @@ CMakeFiles/Core.dir/ThreadPool/TaskQueueContainer.cpp.o.provides.build: CMakeFil
 # Object files for target Core
 Core_OBJECTS = \
 "CMakeFiles/Core.dir/main.cpp.o" \
+"CMakeFiles/Core.dir/Inteface/Scheduler.cpp.o" \
+"CMakeFiles/Core.dir/ThreadPool/MyTask.cpp.o" \
 "CMakeFiles/Core.dir/ThreadPool/CoreThread.cpp.o" \
 "CMakeFiles/Core.dir/ThreadPool/CoreThreadPool.cpp.o" \
 "CMakeFiles/Core.dir/ThreadPool/CoreLock.cpp.o" \
@@ -239,6 +289,8 @@ Core_OBJECTS = \
 Core_EXTERNAL_OBJECTS =
 
 Core: CMakeFiles/Core.dir/main.cpp.o
+Core: CMakeFiles/Core.dir/Inteface/Scheduler.cpp.o
+Core: CMakeFiles/Core.dir/ThreadPool/MyTask.cpp.o
 Core: CMakeFiles/Core.dir/ThreadPool/CoreThread.cpp.o
 Core: CMakeFiles/Core.dir/ThreadPool/CoreThreadPool.cpp.o
 Core: CMakeFiles/Core.dir/ThreadPool/CoreLock.cpp.o
@@ -247,7 +299,7 @@ Core: CMakeFiles/Core.dir/ThreadPool/TaskQueue.cpp.o
 Core: CMakeFiles/Core.dir/ThreadPool/TaskQueueContainer.cpp.o
 Core: CMakeFiles/Core.dir/build.make
 Core: CMakeFiles/Core.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/cyc/Core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable Core"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/cyc/Core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable Core"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Core.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -256,6 +308,8 @@ CMakeFiles/Core.dir/build: Core
 .PHONY : CMakeFiles/Core.dir/build
 
 CMakeFiles/Core.dir/requires: CMakeFiles/Core.dir/main.cpp.o.requires
+CMakeFiles/Core.dir/requires: CMakeFiles/Core.dir/Inteface/Scheduler.cpp.o.requires
+CMakeFiles/Core.dir/requires: CMakeFiles/Core.dir/ThreadPool/MyTask.cpp.o.requires
 CMakeFiles/Core.dir/requires: CMakeFiles/Core.dir/ThreadPool/CoreThread.cpp.o.requires
 CMakeFiles/Core.dir/requires: CMakeFiles/Core.dir/ThreadPool/CoreThreadPool.cpp.o.requires
 CMakeFiles/Core.dir/requires: CMakeFiles/Core.dir/ThreadPool/CoreLock.cpp.o.requires

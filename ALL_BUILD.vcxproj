@@ -65,7 +65,7 @@
     </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Midl>
-      <AdditionalIncludeDirectories>E:\iMayCode\TBAS\Core\include;E:\iMayCode\TBAS\Core\json\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\iMayCode\TBAS\Core\include;E:\iMayCode\TBAS\Core\json\src;E:\iMayCode\TBAS\Core\luawrapper\include;E:\iMayCode\TBAS\Core\.;E:\iMayCode\TBAS\Core\lua-5.3.4\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -75,7 +75,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Midl>
-      <AdditionalIncludeDirectories>E:\iMayCode\TBAS\Core\include;E:\iMayCode\TBAS\Core\json\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\iMayCode\TBAS\Core\include;E:\iMayCode\TBAS\Core\json\src;E:\iMayCode\TBAS\Core\luawrapper\include;E:\iMayCode\TBAS\Core\.;E:\iMayCode\TBAS\Core\lua-5.3.4\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -85,7 +85,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
     <Midl>
-      <AdditionalIncludeDirectories>E:\iMayCode\TBAS\Core\include;E:\iMayCode\TBAS\Core\json\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\iMayCode\TBAS\Core\include;E:\iMayCode\TBAS\Core\json\src;E:\iMayCode\TBAS\Core\luawrapper\include;E:\iMayCode\TBAS\Core\.;E:\iMayCode\TBAS\Core\lua-5.3.4\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -95,7 +95,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
     <Midl>
-      <AdditionalIncludeDirectories>E:\iMayCode\TBAS\Core\include;E:\iMayCode\TBAS\Core\json\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\iMayCode\TBAS\Core\include;E:\iMayCode\TBAS\Core\json\src;E:\iMayCode\TBAS\Core\luawrapper\include;E:\iMayCode\TBAS\Core\.;E:\iMayCode\TBAS\Core\lua-5.3.4\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>

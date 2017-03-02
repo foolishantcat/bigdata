@@ -13,6 +13,8 @@ Scheduler::~Scheduler() {}
 //For instance and de-construction
 Scheduler *Scheduler::schedulerShared = NULL;
 Scheduler::SchedulerGarbo Scheduler::Garbo;
+CoreThreadPool* Scheduler::threadPool = NULL;
+const char* Scheduler::versionInfo = NULL;
 //instance core frame
 Scheduler* Scheduler::instance()
 {
@@ -30,7 +32,7 @@ Scheduler* Scheduler::instance()
         if(NULL != threadPool)
             break;
         else
-            threadPool = new CoreThreadPool(NUMBER_OF_THREAD);
+            threadPool = new CoreThreadPool(NUMBER_OF_THREAD, schedulerShared);
 
         //start thread pool
         threadPool->Init();
@@ -42,7 +44,7 @@ Scheduler* Scheduler::instance()
 }
 
 //get version
-const char* TBAS::Core::Scheduler::version()
+const char* Scheduler::version()
 {
     //get version info
 
@@ -50,7 +52,7 @@ const char* TBAS::Core::Scheduler::version()
 }
 
 //sync communication
-std::shared_ptr<IASObject> TBAS::Core::Scheduler::syncCommand(std::shared_ptr<IASObject> arg)
+std::shared_ptr<IASObject> Scheduler::syncCommand(std::shared_ptr<IASObject> arg)
 {
     //use multi-thread c++11
 
@@ -59,7 +61,7 @@ std::shared_ptr<IASObject> TBAS::Core::Scheduler::syncCommand(std::shared_ptr<IA
 }
 
 //async communication
-bool TBAS::Core::Scheduler::asyncCommand(std::shared_ptr<IASObject> arg)
+bool Scheduler::asyncCommand(std::shared_ptr<IASObject> arg)
 {
     //use call-back func
 
@@ -67,7 +69,7 @@ bool TBAS::Core::Scheduler::asyncCommand(std::shared_ptr<IASObject> arg)
 }
 
 //message communication
-bool TBAS::Core::Scheduler::addEventListen(std::shared_ptr<IASObject> arg)
+bool Scheduler::addEventListen(std::shared_ptr<IASObject> arg)
 {
     return false;
 }

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="E:\iMayCode\TBAS\Core\main.cpp">
@@ -22,8 +22,6 @@
     <ClCompile Include="E:\iMayCode\TBAS\Core\ThreadPool\TaskQueueContainer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Inteface\Scheduler.cpp" />
-    <ClCompile Include="ThreadPool\MyTask.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="E:\iMayCode\TBAS\Core\include\MyTask.h">
@@ -47,10 +45,6 @@
     <ClInclude Include="E:\iMayCode\TBAS\Core\include\Semaphore.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\CoreThread.h" />
-    <ClInclude Include="include\CoreThreadPool.h" />
-    <ClInclude Include="include\IASObject.h" />
-    <ClInclude Include="include\Scheduler.h" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="E:\iMayCode\TBAS\Core\CMakeLists.txt" />

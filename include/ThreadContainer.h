@@ -15,19 +15,20 @@ namespace TBAS
 		class CoreThreadPool;
         class ThreadContainer
         {
+			friend class CoreThread;
+			friend class CoreThreadPool;
         public:
             ThreadContainer(CoreThreadPool* pPool);
             ~ThreadContainer();
             unsigned int Size();
             void Assign(int number, CoreThreadPool* pPool);
-            //CoreThread* Top();
             CoreThread* At(int index);
-            //void Pop();
             bool IsSurvive();
 
         private:
             std::vector<CoreThread*> thread_core_vector_;
             CoreThreadPool* thread_pool_;
+			static int number_of_thread_;
             //not open for outside
             void Push(CoreThread* pThread);
             void Erase(CoreThread* pThread);
@@ -37,4 +38,4 @@ namespace TBAS
     }
 }
 
-#endif //CORE_THREADCONTAINER_H
+#endif //THREADCONTAINER_H

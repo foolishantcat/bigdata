@@ -9,6 +9,8 @@
 
 using namespace TBAS::Core;
 
+int ThreadContainer::number_of_thread_ = 0;
+
 ThreadContainer::ThreadContainer(CoreThreadPool* pPool)
 {
     thread_pool_ = pPool;
@@ -34,7 +36,6 @@ void ThreadContainer::Assign(int number, CoreThreadPool* pPool)
     for(int i = 0; i < number; i++)
     {
         CoreThread* thread = new CoreThread(i+1, true, pPool);
-        //thread.detach();
         Push(thread);
     }
 }
@@ -43,16 +44,6 @@ void ThreadContainer::Push(CoreThread* pThread)
 {
     thread_core_vector_.push_back(pThread);
 }
-
-//CoreThread* ThreadContainer::Top()
-//{
-//    return thread_core_vector_.back();
-//}
-
-//void ThreadContainer::Pop()
-//{
-//    thread_core_vector_.pop_back();
-//}
 
 void ThreadContainer::Erase(CoreThread* pThread)
 {

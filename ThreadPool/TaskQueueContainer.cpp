@@ -3,6 +3,7 @@
 //
 
 #include <algorithm>
+#include "Common.h"
 #include "TaskQueue.h"
 #include "TaskQueueContainer.h"
 #include "CoreThreadPool.h"
@@ -37,6 +38,11 @@ void TaskQueueContainer::Assign(int number, TaskQueueContainer* container)
     for (int i = 0; i < number; i++)
     {
         TaskQueue* taskQueue = new TaskQueue(container);
+		if (QUEUE_NOTIFY_ID == i)
+			taskQueue->is_weak_ptr_ = true;
+		else
+			taskQueue->is_weak_ptr_ = false;
+
         Push(taskQueue);
     }
 }
@@ -53,5 +59,5 @@ TaskQueue* TaskQueueContainer::At(int index)
 
 void TaskQueueContainer::Erase(TaskQueue* pQueue)
 {
-    //task_queue_container_.erase(std::find(task_queue_container_.begin(), task_queue_container_, pQueue));
+    task_queue_container_.erase(std::find(task_queue_container_.begin(), task_queue_container_.end(), pQueue));
 }

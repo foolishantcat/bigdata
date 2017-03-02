@@ -34,4 +34,4 @@ namespace TBAS
     }
 }
 
-#endif //CORE_TASKCONTAINER_H
+#endif //TASK_QUEUE_CONTAINER_H

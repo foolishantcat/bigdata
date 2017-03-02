@@ -45,4 +45,4 @@ namespace TBAS{
     }
 }
 
-#endif //CORE_SEMAPHORE_H
+#endif //SEMAPHORE_H

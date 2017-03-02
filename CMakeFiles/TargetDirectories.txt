@@ -1,3 +1,3 @@
-E:/iMayCode/TBAS/Core/CMakeFiles/Core.dir
-E:/iMayCode/TBAS/Core/CMakeFiles/ALL_BUILD.dir
-E:/iMayCode/TBAS/Core/CMakeFiles/ZERO_CHECK.dir
+/home/cyc/Core/CMakeFiles/edit_cache.dir
+/home/cyc/Core/CMakeFiles/rebuild_cache.dir
+/home/cyc/Core/CMakeFiles/Core.dir

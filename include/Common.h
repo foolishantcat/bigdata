@@ -12,6 +12,9 @@
             break;
 #define CHECK_WEEK_PTR_VALID(ptr) if(auto observe = ptr.lock()) \
             break;
+#define QUEUE_TASK_ID 0
+#define QUEUE_NOTIFY_ID 1
+#define QUEUE_MESSAGE_ID 2
 
 
-#endif //CORE_COMMON_H
+#endif //COMMON_H

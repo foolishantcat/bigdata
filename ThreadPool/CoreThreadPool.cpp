@@ -21,23 +21,16 @@ CoreThreadPool::~CoreThreadPool()
         delete task_queue_container_;
 }
 
-CoreThreadPool::CoreThreadPool(int number)
+CoreThreadPool::CoreThreadPool(int number, Scheduler* pScheduler)
 {
     is_survive_ = true;
     number_of_thread_ = number;
-    //scheduler_ = scheduler;
-    
 }
 
 void CoreThreadPool::AddTask(std::weak_ptr<IASObject> asObject)
 {
     do
     {
-        //if(true != is_survive_)
-            //break;
-        //get share_ptr
-        //if(auto observe = asObject.lock())
-            //break;
         CHECK_POOL_SURVIVE(is_survive_);
         CHECK_WEEK_PTR_VALID(asObject);
 
@@ -45,7 +38,7 @@ void CoreThreadPool::AddTask(std::weak_ptr<IASObject> asObject)
         TaskQueue* taskQueue = task_queue_container_->At(0);
 
         {
-            std::lock_guard<std::mutex> lk(task_mutex_);
+            std::lock_guard<std::mutex> lk(/*task_mutex_*/queue_task_mutex_);
             taskQueue->Push(asObject);
         }
 
@@ -65,7 +58,7 @@ void CoreThreadPool::Init()
         CHECK_POOL_SURVIVE(is_survive_);
 
 		//Create thread for pop task queue.
-		thread_init_ = std::move(std::thread(&CoreThreadPool::Init, this));
+		//thread_init_ = std::move(std::thread(&CoreThreadPool::Init, this));
 		//thread_this_.detach();
 
         task_queue_container_ = new TaskQueueContainer(this);
@@ -87,7 +80,7 @@ void CoreThreadPool::Run()
     {
         CoreThread* thread = thread_container_->At(i);
         //create and start thread
-        thread->StartThread();
+        thread->Start();
     }
 }
 
@@ -98,21 +91,14 @@ void CoreThreadPool::EndCoreThreadPool()
 
     is_survive_ = false;
     //join thread
-
-}
-
-TaskQueueContainer* CoreThreadPool::GetTaskQueueContainer()
-{
-	return nullptr;
-}
-
-ThreadContainer* CoreThreadPool::GetThreadContainer()
-{
-	return nullptr;
+    for (int i = 0; i < thread_container_->number_of_thread_; i++)
+    {
+		thread_container_->At(i)->Stop();
+    }
 }
 
 bool CoreThreadPool::IsSurvive()
 {
-	return true;
+	return is_survive_;
 }
 

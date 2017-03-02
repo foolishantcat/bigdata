@@ -17,19 +17,29 @@ namespace TBAS
         {
         public:
             MyTask();
-            MyTask(std::string commandString);      //set command string
-            virtual ~MyTask();
+            ~MyTask();
+
+			void setError(std::string errorInfo, int errorNumber);
             std::string errorInfo();
             int errorNumber();
+
+			void setCommandString(std::string commandStr);
             std::string commandString();
-            void setData(void *data);
-            void * const data();
+
+            void setData(void *data);		//ignore this
+            void * const data();			//ignore this
+
+			void setStringData(std::string strData);	//lua para
+			std::string stringData();
 
         private:
-            void *m_data;
-            std::string m_command;
+            void *m_data_;			//ignore this
+			std::string m_stringData;
+            std::string m_command_;
+			std::string m_errorinfo_;
+			int error_number_;
         };
     }
 }
 
-#endif //CORE_MYTASK_H_H
+#endif //MYTASK_H_H

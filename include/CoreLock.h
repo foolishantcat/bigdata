@@ -23,4 +23,4 @@ namespace TBAS
     }
 }
 
-#endif //CORE_CORELOCK_H
+#endif //CORELOCK_H

@@ -1,5 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Core.dir/main.cpp.o"
+  "CMakeFiles/Core.dir/Inteface/Scheduler.cpp.o"
+  "CMakeFiles/Core.dir/ThreadPool/MyTask.cpp.o"
   "CMakeFiles/Core.dir/ThreadPool/CoreThread.cpp.o"
   "CMakeFiles/Core.dir/ThreadPool/CoreThreadPool.cpp.o"
   "CMakeFiles/Core.dir/ThreadPool/CoreLock.cpp.o"

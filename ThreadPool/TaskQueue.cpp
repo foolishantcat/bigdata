@@ -11,6 +11,7 @@ using namespace TBAS::Core;
 TaskQueue::TaskQueue(TaskQueueContainer* container)
 {
     object_list_.clear();
+	wk_object_list_.clear();
     number_of_task_ = 0;
     task_queue_container_ = container;
 }
@@ -22,41 +23,50 @@ TaskQueue::~TaskQueue()
 
 unsigned int TaskQueue::Size()
 {
-    return object_list_.size();
+	if (false == is_weak_ptr_)
+		return object_list_.size();
+	else
+		return wk_object_list_.size();
 }
 
 void TaskQueue::Push(std::weak_ptr<IASObject> asObject)
 {
     do
     {
-        //if(auto observe = asObject.lock())
-            //break;
-        CHECK_WEEK_PTR_VALID(asObject);
-
         //add mutex lock
         //CoreLock Lock(&(task_queue_container_->task_mutex_));
-        object_list_.push_back(asObject);
+		if(false == is_weak_ptr_)
+		{
+			CHECK_WEEK_PTR_VALID(asObject);
+			object_list_.push_back(asObject.lock());
+		}
+		else
+			wk_object_list_.push_back(asObject);
 
     } while(0);
 }
 
 std::weak_ptr<IASObject> TaskQueue::Top()
 {
-    return object_list_.front();
+	if (true == is_weak_ptr_)
+		return wk_object_list_.front();
+	else
+		return object_list_.front();
 }
 
 //delete top elememt
 void TaskQueue::Pop()
 {
-    object_list_.pop_front();
+	if (true == is_weak_ptr_)
+		wk_object_list_.pop_front();
+	else
+		object_list_.pop_front();
 }
 
 bool TaskQueue::Empty()
 {
-    return object_list_.empty();
+	if (true == is_weak_ptr_)
+		return wk_object_list_.empty();
+	else
+		return object_list_.empty();
 }
-
-//std::list<std::week_ptr<IASObject>> TaskQueue::GetTaskList()
-//{
-//    return object_list_;
-//}
