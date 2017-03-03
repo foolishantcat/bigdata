@@ -7,6 +7,8 @@
 #IncludeRegexTransform: 
 
 /home/cyc/Core/Inteface/Scheduler.cpp
+iostream
+-
 Scheduler.h
 /home/cyc/Core/Inteface/Scheduler.h
 Common.h
@@ -24,6 +26,8 @@ CoreLock.h
 list
 -
 memory
+-
+fstream
 -
 Common.h
 /home/cyc/Core/ThreadPool/Common.h
@@ -43,6 +47,8 @@ LuaContext.hpp
 /home/cyc/Core/ThreadPool/LuaContext.hpp
 
 /home/cyc/Core/ThreadPool/CoreThreadPool.cpp
+iostream
+-
 thread
 -
 Common.h
@@ -99,6 +105,12 @@ ThreadContainer.h
 /home/cyc/Core/main.cpp
 iostream
 -
+Scheduler.h
+/home/cyc/Core/Scheduler.h
+IASObject.h
+/home/cyc/Core/IASObject.h
+MyTask.h
+/home/cyc/Core/MyTask.h
 
 boost/aligned_storage.hpp
 boost/type_traits/aligned_storage.hpp

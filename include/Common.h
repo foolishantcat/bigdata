@@ -11,10 +11,15 @@
 #define CHECK_POOL_SURVIVE(is_survive) if(true != is_survive) \
             break;
 #define CHECK_WEEK_PTR_VALID(ptr) if(auto observe = ptr.lock()) \
-            break;
+            ; \
+		else \
+			break;
 #define QUEUE_TASK_ID 0
 #define QUEUE_NOTIFY_ID 1
 #define QUEUE_MESSAGE_ID 2
+
+#define THREAD_TASK_ID 1
+#define THREAD_MESSAGE_ID 2
 
 
 #endif //COMMON_H

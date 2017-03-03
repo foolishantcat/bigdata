@@ -51,6 +51,7 @@ void MyTask::setStringData(std::string strData)
 
 std::string MyTask::stringData()
 {
+	//cout << "1111-----" << endl;
 	return m_stringData;
 }
 

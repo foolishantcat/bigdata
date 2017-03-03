@@ -679,4 +679,14 @@ CMakeFiles/Core.dir/ThreadPool/ThreadContainer.cpp.o: include/ThreadContainer.h
 CMakeFiles/Core.dir/ThreadPool/ThreadContainer.cpp.o: json/src/json.hpp
 
 CMakeFiles/Core.dir/main.cpp.o: main.cpp
+CMakeFiles/Core.dir/main.cpp.o: include/CoreThread.h
+CMakeFiles/Core.dir/main.cpp.o: include/CoreThreadPool.h
+CMakeFiles/Core.dir/main.cpp.o: include/IASObject.h
+CMakeFiles/Core.dir/main.cpp.o: include/MyTask.h
+CMakeFiles/Core.dir/main.cpp.o: include/Scheduler.h
+CMakeFiles/Core.dir/main.cpp.o: include/Semaphore.h
+CMakeFiles/Core.dir/main.cpp.o: include/TaskQueue.h
+CMakeFiles/Core.dir/main.cpp.o: include/TaskQueueContainer.h
+CMakeFiles/Core.dir/main.cpp.o: include/ThreadContainer.h
+CMakeFiles/Core.dir/main.cpp.o: json/src/json.hpp
 

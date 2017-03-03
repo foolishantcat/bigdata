@@ -1,14 +1,22 @@
 //
 // Created by Administrator on 2017/2/24 0024.
 //
+#include <iostream>
 #include "Scheduler.h"
 #include "Common.h"
 #include "CoreThreadPool.h"
 
+using namespace std;
 using namespace TBAS::Core;
 
-Scheduler::Scheduler() {}
-Scheduler::~Scheduler() {}
+Scheduler::Scheduler() 
+{
+}
+Scheduler::~Scheduler() 
+{
+	threadPool->EndCoreThreadPool();
+	cout << "~Scheduler\n";
+}
 
 //For instance and de-construction
 Scheduler *Scheduler::schedulerShared = NULL;
@@ -18,6 +26,7 @@ const char* Scheduler::versionInfo = NULL;
 //instance core frame
 Scheduler* Scheduler::instance()
 {
+	//cout << "Scheduler::instance()" << endl;
     do
     {
         //get version info
@@ -55,6 +64,8 @@ const char* Scheduler::version()
 std::shared_ptr<IASObject> Scheduler::syncCommand(std::shared_ptr<IASObject> arg)
 {
     //use multi-thread c++11
+	cout << "call syncCommand" << endl;
+
 
 
     return nullptr;
@@ -64,12 +75,14 @@ std::shared_ptr<IASObject> Scheduler::syncCommand(std::shared_ptr<IASObject> arg
 bool Scheduler::asyncCommand(std::shared_ptr<IASObject> arg)
 {
     //use call-back func
+	//cout << "call asyncCommand" << endl;
+	threadPool->AddTask(arg);
 
-    return false;
+    return true;
 }
 
 //message communication
 bool Scheduler::addEventListen(std::shared_ptr<IASObject> arg)
 {
-    return false;
+    return true;
 }

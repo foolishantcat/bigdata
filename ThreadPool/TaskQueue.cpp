@@ -54,7 +54,7 @@ std::weak_ptr<IASObject> TaskQueue::Top()
 		return object_list_.front();
 }
 
-//delete top elememt
+//pop top elememt
 void TaskQueue::Pop()
 {
 	if (true == is_weak_ptr_)
@@ -69,4 +69,11 @@ bool TaskQueue::Empty()
 		return wk_object_list_.empty();
 	else
 		return object_list_.empty();
+}
+
+//simplify handle ,just delete notify queue
+void TaskQueue::Erase(std::list<std::weak_ptr<IASObject>>::iterator it)
+{
+	if (true == is_weak_ptr_)
+		wk_object_list_.erase(it);
 }

@@ -680,3 +680,13 @@ CMakeFiles/Core.dir/ThreadPool/ThreadContainer.cpp.o
  json/src/json.hpp
 CMakeFiles/Core.dir/main.cpp.o
  /home/cyc/Core/main.cpp
+ include/CoreThread.h
+ include/CoreThreadPool.h
+ include/IASObject.h
+ include/MyTask.h
+ include/Scheduler.h
+ include/Semaphore.h
+ include/TaskQueue.h
+ include/TaskQueueContainer.h
+ include/ThreadContainer.h
+ json/src/json.hpp

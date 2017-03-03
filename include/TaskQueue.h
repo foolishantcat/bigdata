@@ -26,6 +26,7 @@ namespace TBAS
             std::weak_ptr<IASObject> Top();
             void Pop();
             bool Empty();
+			void Erase(std::list<std::weak_ptr<IASObject>>::iterator it);
 
         private:
             int number_of_task_;

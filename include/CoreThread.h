@@ -32,9 +32,9 @@ namespace TBAS
         private:
             CoreThreadPool* thread_pool_;
             void Run();             //thread's handler
-            void HandleTask(std::weak_ptr<IASObject> asObject);
-            void HandleMessage(std::weak_ptr<IASObject> asObject);
-			void CallLuaFunction();
+            void HandleTask(std::shared_ptr<IASObject> asObject);
+            void HandleMessage(std::shared_ptr<IASObject> asObject);
+			//void CallLuaFunction();
             static int number_of_thread_;
             //1--task thread 2--listen thread 3-- notify thread
             int thread_id_;

@@ -29,8 +29,8 @@ namespace TBAS
             virtual void setData(void *data) {} ;
             virtual void * const data(){return nullptr;};
 
-			void setStringData(std::string strData) {};
-			std::string stringData() { return ""; };
+			virtual void setStringData(std::string strData) {};
+			virtual std::string stringData() { return ""; };
             /*! Virtual destructor */
             virtual ~IASObject() {};
         };
