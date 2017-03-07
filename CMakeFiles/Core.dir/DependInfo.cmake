@@ -4,21 +4,20 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/cyc/Core/Inteface/Scheduler.cpp" "/home/cyc/Core/CMakeFiles/Core.dir/Inteface/Scheduler.cpp.o"
-  "/home/cyc/Core/ThreadPool/CoreLock.cpp" "/home/cyc/Core/CMakeFiles/Core.dir/ThreadPool/CoreLock.cpp.o"
-  "/home/cyc/Core/ThreadPool/CoreThread.cpp" "/home/cyc/Core/CMakeFiles/Core.dir/ThreadPool/CoreThread.cpp.o"
-  "/home/cyc/Core/ThreadPool/CoreThreadPool.cpp" "/home/cyc/Core/CMakeFiles/Core.dir/ThreadPool/CoreThreadPool.cpp.o"
-  "/home/cyc/Core/ThreadPool/MyTask.cpp" "/home/cyc/Core/CMakeFiles/Core.dir/ThreadPool/MyTask.cpp.o"
-  "/home/cyc/Core/ThreadPool/TaskQueue.cpp" "/home/cyc/Core/CMakeFiles/Core.dir/ThreadPool/TaskQueue.cpp.o"
-  "/home/cyc/Core/ThreadPool/TaskQueueContainer.cpp" "/home/cyc/Core/CMakeFiles/Core.dir/ThreadPool/TaskQueueContainer.cpp.o"
-  "/home/cyc/Core/ThreadPool/ThreadContainer.cpp" "/home/cyc/Core/CMakeFiles/Core.dir/ThreadPool/ThreadContainer.cpp.o"
   "/home/cyc/Core/main.cpp" "/home/cyc/Core/CMakeFiles/Core.dir/main.cpp.o"
+  "/home/cyc/Core/src/CLock.cpp" "/home/cyc/Core/CMakeFiles/Core.dir/src/CLock.cpp.o"
+  "/home/cyc/Core/src/CMessageThread.cpp" "/home/cyc/Core/CMakeFiles/Core.dir/src/CMessageThread.cpp.o"
+  "/home/cyc/Core/src/CMyTask.cpp" "/home/cyc/Core/CMakeFiles/Core.dir/src/CMyTask.cpp.o"
+  "/home/cyc/Core/src/CScheduler.cpp" "/home/cyc/Core/CMakeFiles/Core.dir/src/CScheduler.cpp.o"
+  "/home/cyc/Core/src/CTaskThread.cpp" "/home/cyc/Core/CMakeFiles/Core.dir/src/CTaskThread.cpp.o"
+  "/home/cyc/Core/src/CThread.cpp" "/home/cyc/Core/CMakeFiles/Core.dir/src/CThread.cpp.o"
+  "/home/cyc/Core/src/CThreadPool.cpp" "/home/cyc/Core/CMakeFiles/Core.dir/src/CThreadPool.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "include"
+  "src"
   "json/src"
   "luawrapper/include"
   "."

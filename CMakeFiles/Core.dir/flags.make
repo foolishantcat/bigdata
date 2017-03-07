@@ -6,5 +6,5 @@ CXX_FLAGS =   -g -std=gnu++11
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/cyc/Core/include -I/home/cyc/Core/json/src -I/home/cyc/Core/luawrapper/include -I/home/cyc/Core/. -I/home/cyc/Core/lua-5.3.4/src 
+CXX_INCLUDES = -I/home/cyc/Core/src -I/home/cyc/Core/json/src -I/home/cyc/Core/luawrapper/include -I/home/cyc/Core/. -I/home/cyc/Core/lua-5.3.4/src 
 

@@ -14,17 +14,16 @@ local urlprefix="http://192.168.0.252/ios/"
 -- 依赖的业务文件
 M.depend = {
     -- {"filename", "version", "md5"},
-    {"depend_service.lua", "0.0.1", "51a562e05cfcf1f4cbf1fd4f6a57e623"},
+    {"depend_service.lua", "0.0.1", "bb4d8ad4b1e88a8d674cfee5fd38be62"},
 }
 
 -- 可选的业务文件
 M.option = {
     -- {"filename", "version", "md5"},
-    {"option_service-ios.lua", "0.0.1", "aa2d13b593be084c26178d2611caf5b8"},
+    {"option_service.lua", "0.0.1", "5592910d495e77a57e198e672b26d97e"},
 }
 
-function test(str)
-	return str
-end
-
-print("execute config ok")
+M.cmdstring = {
+    {"login", "depend_service:login"},
+    {"logout", "depend_service:logout"},
+}

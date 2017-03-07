@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/cyc/Core
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -77,6 +66,17 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -111,233 +111,30 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Core
+# Target rules for targets named main
 
 # Build rule for target.
-Core: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Core
-.PHONY : Core
+main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 main
+.PHONY : main
 
 # fast build rule for target.
-Core/fast:
-	$(MAKE) -f CMakeFiles/Core.dir/build.make CMakeFiles/Core.dir/build
-.PHONY : Core/fast
-
-Inteface/Scheduler.o: Inteface/Scheduler.cpp.o
-
-.PHONY : Inteface/Scheduler.o
-
-# target to build an object file
-Inteface/Scheduler.cpp.o:
-	$(MAKE) -f CMakeFiles/Core.dir/build.make CMakeFiles/Core.dir/Inteface/Scheduler.cpp.o
-.PHONY : Inteface/Scheduler.cpp.o
-
-Inteface/Scheduler.i: Inteface/Scheduler.cpp.i
-
-.PHONY : Inteface/Scheduler.i
-
-# target to preprocess a source file
-Inteface/Scheduler.cpp.i:
-	$(MAKE) -f CMakeFiles/Core.dir/build.make CMakeFiles/Core.dir/Inteface/Scheduler.cpp.i
-.PHONY : Inteface/Scheduler.cpp.i
-
-Inteface/Scheduler.s: Inteface/Scheduler.cpp.s
-
-.PHONY : Inteface/Scheduler.s
-
-# target to generate assembly for a file
-Inteface/Scheduler.cpp.s:
-	$(MAKE) -f CMakeFiles/Core.dir/build.make CMakeFiles/Core.dir/Inteface/Scheduler.cpp.s
-.PHONY : Inteface/Scheduler.cpp.s
-
-ThreadPool/CoreLock.o: ThreadPool/CoreLock.cpp.o
-
-.PHONY : ThreadPool/CoreLock.o
-
-# target to build an object file
-ThreadPool/CoreLock.cpp.o:
-	$(MAKE) -f CMakeFiles/Core.dir/build.make CMakeFiles/Core.dir/ThreadPool/CoreLock.cpp.o
-.PHONY : ThreadPool/CoreLock.cpp.o
-
-ThreadPool/CoreLock.i: ThreadPool/CoreLock.cpp.i
-
-.PHONY : ThreadPool/CoreLock.i
-
-# target to preprocess a source file
-ThreadPool/CoreLock.cpp.i:
-	$(MAKE) -f CMakeFiles/Core.dir/build.make CMakeFiles/Core.dir/ThreadPool/CoreLock.cpp.i
-.PHONY : ThreadPool/CoreLock.cpp.i
-
-ThreadPool/CoreLock.s: ThreadPool/CoreLock.cpp.s
-
-.PHONY : ThreadPool/CoreLock.s
-
-# target to generate assembly for a file
-ThreadPool/CoreLock.cpp.s:
-	$(MAKE) -f CMakeFiles/Core.dir/build.make CMakeFiles/Core.dir/ThreadPool/CoreLock.cpp.s
-.PHONY : ThreadPool/CoreLock.cpp.s
-
-ThreadPool/CoreThread.o: ThreadPool/CoreThread.cpp.o
-
-.PHONY : ThreadPool/CoreThread.o
-
-# target to build an object file
-ThreadPool/CoreThread.cpp.o:
-	$(MAKE) -f CMakeFiles/Core.dir/build.make CMakeFiles/Core.dir/ThreadPool/CoreThread.cpp.o
-.PHONY : ThreadPool/CoreThread.cpp.o
-
-ThreadPool/CoreThread.i: ThreadPool/CoreThread.cpp.i
-
-.PHONY : ThreadPool/CoreThread.i
-
-# target to preprocess a source file
-ThreadPool/CoreThread.cpp.i:
-	$(MAKE) -f CMakeFiles/Core.dir/build.make CMakeFiles/Core.dir/ThreadPool/CoreThread.cpp.i
-.PHONY : ThreadPool/CoreThread.cpp.i
-
-ThreadPool/CoreThread.s: ThreadPool/CoreThread.cpp.s
-
-.PHONY : ThreadPool/CoreThread.s
-
-# target to generate assembly for a file
-ThreadPool/CoreThread.cpp.s:
-	$(MAKE) -f CMakeFiles/Core.dir/build.make CMakeFiles/Core.dir/ThreadPool/CoreThread.cpp.s
-.PHONY : ThreadPool/CoreThread.cpp.s
-
-ThreadPool/CoreThreadPool.o: ThreadPool/CoreThreadPool.cpp.o
-
-.PHONY : ThreadPool/CoreThreadPool.o
-
-# target to build an object file
-ThreadPool/CoreThreadPool.cpp.o:
-	$(MAKE) -f CMakeFiles/Core.dir/build.make CMakeFiles/Core.dir/ThreadPool/CoreThreadPool.cpp.o
-.PHONY : ThreadPool/CoreThreadPool.cpp.o
-
-ThreadPool/CoreThreadPool.i: ThreadPool/CoreThreadPool.cpp.i
-
-.PHONY : ThreadPool/CoreThreadPool.i
-
-# target to preprocess a source file
-ThreadPool/CoreThreadPool.cpp.i:
-	$(MAKE) -f CMakeFiles/Core.dir/build.make CMakeFiles/Core.dir/ThreadPool/CoreThreadPool.cpp.i
-.PHONY : ThreadPool/CoreThreadPool.cpp.i
-
-ThreadPool/CoreThreadPool.s: ThreadPool/CoreThreadPool.cpp.s
-
-.PHONY : ThreadPool/CoreThreadPool.s
-
-# target to generate assembly for a file
-ThreadPool/CoreThreadPool.cpp.s:
-	$(MAKE) -f CMakeFiles/Core.dir/build.make CMakeFiles/Core.dir/ThreadPool/CoreThreadPool.cpp.s
-.PHONY : ThreadPool/CoreThreadPool.cpp.s
-
-ThreadPool/MyTask.o: ThreadPool/MyTask.cpp.o
-
-.PHONY : ThreadPool/MyTask.o
-
-# target to build an object file
-ThreadPool/MyTask.cpp.o:
-	$(MAKE) -f CMakeFiles/Core.dir/build.make CMakeFiles/Core.dir/ThreadPool/MyTask.cpp.o
-.PHONY : ThreadPool/MyTask.cpp.o
-
-ThreadPool/MyTask.i: ThreadPool/MyTask.cpp.i
-
-.PHONY : ThreadPool/MyTask.i
-
-# target to preprocess a source file
-ThreadPool/MyTask.cpp.i:
-	$(MAKE) -f CMakeFiles/Core.dir/build.make CMakeFiles/Core.dir/ThreadPool/MyTask.cpp.i
-.PHONY : ThreadPool/MyTask.cpp.i
-
-ThreadPool/MyTask.s: ThreadPool/MyTask.cpp.s
-
-.PHONY : ThreadPool/MyTask.s
-
-# target to generate assembly for a file
-ThreadPool/MyTask.cpp.s:
-	$(MAKE) -f CMakeFiles/Core.dir/build.make CMakeFiles/Core.dir/ThreadPool/MyTask.cpp.s
-.PHONY : ThreadPool/MyTask.cpp.s
-
-ThreadPool/TaskQueue.o: ThreadPool/TaskQueue.cpp.o
-
-.PHONY : ThreadPool/TaskQueue.o
-
-# target to build an object file
-ThreadPool/TaskQueue.cpp.o:
-	$(MAKE) -f CMakeFiles/Core.dir/build.make CMakeFiles/Core.dir/ThreadPool/TaskQueue.cpp.o
-.PHONY : ThreadPool/TaskQueue.cpp.o
-
-ThreadPool/TaskQueue.i: ThreadPool/TaskQueue.cpp.i
-
-.PHONY : ThreadPool/TaskQueue.i
-
-# target to preprocess a source file
-ThreadPool/TaskQueue.cpp.i:
-	$(MAKE) -f CMakeFiles/Core.dir/build.make CMakeFiles/Core.dir/ThreadPool/TaskQueue.cpp.i
-.PHONY : ThreadPool/TaskQueue.cpp.i
-
-ThreadPool/TaskQueue.s: ThreadPool/TaskQueue.cpp.s
-
-.PHONY : ThreadPool/TaskQueue.s
-
-# target to generate assembly for a file
-ThreadPool/TaskQueue.cpp.s:
-	$(MAKE) -f CMakeFiles/Core.dir/build.make CMakeFiles/Core.dir/ThreadPool/TaskQueue.cpp.s
-.PHONY : ThreadPool/TaskQueue.cpp.s
-
-ThreadPool/TaskQueueContainer.o: ThreadPool/TaskQueueContainer.cpp.o
-
-.PHONY : ThreadPool/TaskQueueContainer.o
-
-# target to build an object file
-ThreadPool/TaskQueueContainer.cpp.o:
-	$(MAKE) -f CMakeFiles/Core.dir/build.make CMakeFiles/Core.dir/ThreadPool/TaskQueueContainer.cpp.o
-.PHONY : ThreadPool/TaskQueueContainer.cpp.o
-
-ThreadPool/TaskQueueContainer.i: ThreadPool/TaskQueueContainer.cpp.i
-
-.PHONY : ThreadPool/TaskQueueContainer.i
-
-# target to preprocess a source file
-ThreadPool/TaskQueueContainer.cpp.i:
-	$(MAKE) -f CMakeFiles/Core.dir/build.make CMakeFiles/Core.dir/ThreadPool/TaskQueueContainer.cpp.i
-.PHONY : ThreadPool/TaskQueueContainer.cpp.i
-
-ThreadPool/TaskQueueContainer.s: ThreadPool/TaskQueueContainer.cpp.s
-
-.PHONY : ThreadPool/TaskQueueContainer.s
-
-# target to generate assembly for a file
-ThreadPool/TaskQueueContainer.cpp.s:
-	$(MAKE) -f CMakeFiles/Core.dir/build.make CMakeFiles/Core.dir/ThreadPool/TaskQueueContainer.cpp.s
-.PHONY : ThreadPool/TaskQueueContainer.cpp.s
-
-ThreadPool/ThreadContainer.o: ThreadPool/ThreadContainer.cpp.o
-
-.PHONY : ThreadPool/ThreadContainer.o
-
-# target to build an object file
-ThreadPool/ThreadContainer.cpp.o:
-	$(MAKE) -f CMakeFiles/Core.dir/build.make CMakeFiles/Core.dir/ThreadPool/ThreadContainer.cpp.o
-.PHONY : ThreadPool/ThreadContainer.cpp.o
-
-ThreadPool/ThreadContainer.i: ThreadPool/ThreadContainer.cpp.i
-
-.PHONY : ThreadPool/ThreadContainer.i
-
-# target to preprocess a source file
-ThreadPool/ThreadContainer.cpp.i:
-	$(MAKE) -f CMakeFiles/Core.dir/build.make CMakeFiles/Core.dir/ThreadPool/ThreadContainer.cpp.i
-.PHONY : ThreadPool/ThreadContainer.cpp.i
-
-ThreadPool/ThreadContainer.s: ThreadPool/ThreadContainer.cpp.s
-
-.PHONY : ThreadPool/ThreadContainer.s
-
-# target to generate assembly for a file
-ThreadPool/ThreadContainer.cpp.s:
-	$(MAKE) -f CMakeFiles/Core.dir/build.make CMakeFiles/Core.dir/ThreadPool/ThreadContainer.cpp.s
-.PHONY : ThreadPool/ThreadContainer.cpp.s
+main/fast:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
+.PHONY : main/fast
+
+#=============================================================================
+# Target rules for targets named tbas_core
+
+# Build rule for target.
+tbas_core: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tbas_core
+.PHONY : tbas_core
+
+# fast build rule for target.
+tbas_core/fast:
+	$(MAKE) -f src/CMakeFiles/tbas_core.dir/build.make src/CMakeFiles/tbas_core.dir/build
+.PHONY : tbas_core/fast
 
 main.o: main.cpp.o
 
@@ -345,7 +142,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) -f CMakeFiles/Core.dir/build.make CMakeFiles/Core.dir/main.cpp.o
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -354,7 +151,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) -f CMakeFiles/Core.dir/build.make CMakeFiles/Core.dir/main.cpp.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -363,7 +160,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) -f CMakeFiles/Core.dir/build.make CMakeFiles/Core.dir/main.cpp.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -372,33 +169,10 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... Core"
-	@echo "... Inteface/Scheduler.o"
-	@echo "... Inteface/Scheduler.i"
-	@echo "... Inteface/Scheduler.s"
-	@echo "... ThreadPool/CoreLock.o"
-	@echo "... ThreadPool/CoreLock.i"
-	@echo "... ThreadPool/CoreLock.s"
-	@echo "... ThreadPool/CoreThread.o"
-	@echo "... ThreadPool/CoreThread.i"
-	@echo "... ThreadPool/CoreThread.s"
-	@echo "... ThreadPool/CoreThreadPool.o"
-	@echo "... ThreadPool/CoreThreadPool.i"
-	@echo "... ThreadPool/CoreThreadPool.s"
-	@echo "... ThreadPool/MyTask.o"
-	@echo "... ThreadPool/MyTask.i"
-	@echo "... ThreadPool/MyTask.s"
-	@echo "... ThreadPool/TaskQueue.o"
-	@echo "... ThreadPool/TaskQueue.i"
-	@echo "... ThreadPool/TaskQueue.s"
-	@echo "... ThreadPool/TaskQueueContainer.o"
-	@echo "... ThreadPool/TaskQueueContainer.i"
-	@echo "... ThreadPool/TaskQueueContainer.s"
-	@echo "... ThreadPool/ThreadContainer.o"
-	@echo "... ThreadPool/ThreadContainer.i"
-	@echo "... ThreadPool/ThreadContainer.s"
+	@echo "... edit_cache"
+	@echo "... main"
+	@echo "... tbas_core"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
