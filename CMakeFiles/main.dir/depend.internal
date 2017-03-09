@@ -615,7 +615,6 @@ CMakeFiles/main.dir/main.cpp.o
  src/CSemaphore.h
  src/CTaskThread.h
  src/CThread.h
- src/CThreadPool.h
  src/Config.h
  src/Global.h
  src/IASObject.h

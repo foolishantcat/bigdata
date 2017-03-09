@@ -260,33 +260,6 @@ CThread.cpp.s:
 	cd /home/cyc/Core && $(MAKE) -f src/CMakeFiles/tbas_core.dir/build.make src/CMakeFiles/tbas_core.dir/CThread.cpp.s
 .PHONY : CThread.cpp.s
 
-CThreadPool.o: CThreadPool.cpp.o
-
-.PHONY : CThreadPool.o
-
-# target to build an object file
-CThreadPool.cpp.o:
-	cd /home/cyc/Core && $(MAKE) -f src/CMakeFiles/tbas_core.dir/build.make src/CMakeFiles/tbas_core.dir/CThreadPool.cpp.o
-.PHONY : CThreadPool.cpp.o
-
-CThreadPool.i: CThreadPool.cpp.i
-
-.PHONY : CThreadPool.i
-
-# target to preprocess a source file
-CThreadPool.cpp.i:
-	cd /home/cyc/Core && $(MAKE) -f src/CMakeFiles/tbas_core.dir/build.make src/CMakeFiles/tbas_core.dir/CThreadPool.cpp.i
-.PHONY : CThreadPool.cpp.i
-
-CThreadPool.s: CThreadPool.cpp.s
-
-.PHONY : CThreadPool.s
-
-# target to generate assembly for a file
-CThreadPool.cpp.s:
-	cd /home/cyc/Core && $(MAKE) -f src/CMakeFiles/tbas_core.dir/build.make src/CMakeFiles/tbas_core.dir/CThreadPool.cpp.s
-.PHONY : CThreadPool.cpp.s
-
 Config.o: Config.cpp.o
 
 .PHONY : Config.o
@@ -365,9 +338,6 @@ help:
 	@echo "... CThread.o"
 	@echo "... CThread.i"
 	@echo "... CThread.s"
-	@echo "... CThreadPool.o"
-	@echo "... CThreadPool.i"
-	@echo "... CThreadPool.s"
 	@echo "... Config.o"
 	@echo "... Config.i"
 	@echo "... Config.s"

@@ -7,31 +7,52 @@
 #include <string>
 #include "CScheduler.h"
 #include "Global.h"
-#include "CThreadPool.h"
 #include "LuaContext.hpp"
 #include "CMyTask.h"
+#include "CTaskThread.h"
+#include "CMessageThread.h"
 
 using namespace std;
 using namespace TBAS::Core;
 using namespace TBAS;
 
+#define DEBUG 0
+
 CScheduler::CScheduler() 
 {
-	cout << "Get scheduler instance..." << endl;
+	if(DEBUG) cout << "Get scheduler instance..." << endl;
 }
 CScheduler::~CScheduler() 
 {
 	//threadPool->EndCoreThreadPool();
-	cout << "~Scheduler\n";
+	if(DEBUG) cout << "~Scheduler\n";
 }
 
 bool CScheduler::release()
 {
-	cout << "before threadpool->release()" << endl;
-	m_ThreadPool->Release();
-	cout << "after threadpool->release()" << endl;
+	if(DEBUG) cout << "before CScheduler::release()" << endl;
+	m_ThreadTask->Stop();
+	m_ThreadMessage->Stop();
+
+	if (NULL != m_ThreadTask)
+	{
+		delete m_ThreadTask;
+		m_ThreadTask = NULL;
+	}
+	if (NULL != m_ThreadMessage)
+	{
+		delete m_ThreadMessage;
+		m_ThreadMessage = NULL;
+	}
 
 	delete m_LuaContext;
+	m_LuaContext = NULL;
+
+	delete schedulerShared;
+
+	schedulerShared = NULL;
+
+	if(DEBUG) cout << "after CScheduler::release()" << endl;
 
 	return true;
 }
@@ -39,7 +60,6 @@ bool CScheduler::release()
 //For instance and de-construction
 CScheduler *CScheduler::schedulerShared = NULL;
 CScheduler::SchedulerGarbo CScheduler::Garbo;
-CThreadPool* CScheduler::m_ThreadPool = NULL;
 const char* CScheduler::versionInfo = NULL;
 Config* CScheduler::m_Config = NULL;
 LuaContext* CScheduler::m_LuaContext = NULL;
@@ -47,9 +67,8 @@ LuaContext* CScheduler::m_LuaContext = NULL;
 //instance core frame
 CScheduler* CScheduler::instance()
 {
-	//cout << "Scheduler::instance()" << endl;
     do
-    {
+	{
         //get version info
 
         //instance Core
@@ -58,11 +77,13 @@ CScheduler* CScheduler::instance()
         else
             schedulerShared = new CScheduler();
 
-        //init thread pool
-        if(NULL != m_ThreadPool)
-            break;
-        else
-            m_ThreadPool = CThreadPool::CreateThreadPool(NUMBER_OF_THREAD, schedulerShared);
+		schedulerShared->m_bSurvive = true;
+        //create and run thread
+		schedulerShared->m_ThreadTask = new CTaskThread(THREAD_TASK_ID, (void*)schedulerShared);
+		schedulerShared->m_ThreadTask->Start();
+
+		schedulerShared->m_ThreadMessage = new CMessageThread(THREAD_MESSAGE_ID, (void*)schedulerShared);
+		schedulerShared->m_ThreadMessage->Start();
 
 		CScheduler::m_Config = Config::instance();
 
@@ -89,53 +110,55 @@ LuaContext* CScheduler::luaContext()
 //sync communication
 std::shared_ptr<IASObject> CScheduler::syncCommand(std::shared_ptr<IASObject> arg)
 {
-	cout << "call syncCommand" << endl;
+	if (DEBUG) cout << "call syncCommand" << endl;
 
 	std::string modulePara = arg->stringData();
 	std::string commandStr = arg->commandString();
-	ostringstream ostr;
-	ostr << commandStr << "(" << modulePara << ")" << endl;
+
 	LuaContext* lua = CScheduler::luaContext();
-	std::ifstream ifs("option_service.lua");
-	ifs.close();
+	
+	std::string funcStr;
+	funcStr = "return " + commandStr + "(\"" + modulePara + "\")";
 
-	//lua->executeCode(ifs.get());
+	if (DEBUG) cout << "sync funcStr : " << funcStr << endl;
 
-// 	Config* luaConfig = Config::instance();
-// 	std::string func;
-// 	if (luaConfig->findFunction(commandStr, func))
-// 	{
-// 		cout << "Success: " << func << endl;
-// 	}
-// 	else
-// 	{
-// 
-// 	}
-// 
-//  	const auto function = lua->readVariable<std::function<std::string(void)>>("execute");
-//  	std::string luaRet = function();
-// 
-// 	if (!luaRet.empty())
-// 	{
-// 		cout << "Success : " << luaRet << endl;
-// 	}
-// 	else
-// 	{
-// 		cout << "Failed : " << luaRet << endl;
-// 	}
-// 
- 	std::shared_ptr<CMyTask> retTask = std::make_shared<CMyTask>();
+	std::string luaRet;
+	try
+	{
+		luaRet = lua->executeCode<std::string>(funcStr.c_str());
+		if (DEBUG) cout << "sync Success : " << luaRet << endl;
+	}
+	catch (const exception &e) {
+		printf("load %s exception:%s\n", commandStr.c_str(), e.what());
+		return nullptr;
+	}
+
+ 	//std::shared_ptr<CMyTask> retTask = std::make_shared<CMyTask>();
 // 	retTask->setCommandString(commandStr);
 // 	retTask->setStringData(luaRet.c_str());
+	arg->setStringData(luaRet.c_str());
 
-    return retTask;
+    return arg;
 }
 
 //async communication
 bool CScheduler::asyncCommand(std::shared_ptr<IASObject> arg)
 {
-	cout << "call asynCommand" << endl;
-	m_ThreadPool->AddTask(arg);
+	if(DEBUG)cout << "call asynCommand" << endl;
+
+	CTaskThread* taskThread = GetTaskThread();
+
+	do
+	{
+		CHECK_POOL_SURVIVE(m_bSurvive);
+
+		std::lock_guard<std::mutex> lock(taskThread->TaskMutex());
+
+		taskThread->TaskList().push_back(arg);
+
+		taskThread->SemTask().Signal();
+
+	} while (0);
 
     return true;
 }
@@ -143,8 +166,26 @@ bool CScheduler::asyncCommand(std::shared_ptr<IASObject> arg)
 //add notify command to queue
 bool CScheduler::addEventListen(std::shared_ptr<IASObject> arg)
 {
-	m_ThreadPool->AddNotify(arg);
+	CTaskThread* taskThread = GetTaskThread();
 
+	do
+	{
+		CHECK_POOL_SURVIVE(m_bSurvive);
+
+		std::lock_guard<std::mutex> lock(taskThread->NotifyMutex());
+		taskThread->NotifyList().push_back(arg);
+
+	} while (0);
 
     return true;
+}
+
+CTaskThread* CScheduler::GetTaskThread()
+{
+	return m_ThreadTask;
+}
+
+CMessageThread* CScheduler::GetMsgThread()
+{
+	return m_ThreadMessage;
 }

@@ -1,12 +1,9 @@
 #include <iostream>
 #include <fstream>
 #include "CTaskThread.h"
-#include "CThreadPool.h"
-#include "CLock.h"
+#include "CScheduler.h"
 #include "LuaContext.hpp"
 #include "CMyTask.h"
-#include "CLock.h"
-#include "CScheduler.h"
 
 using namespace std;
 using namespace TBAS::Core;
@@ -18,7 +15,7 @@ typedef std::mutex CMutex;
 CTaskThread::CTaskThread(int nThreadID, void* lpvContext)
 {
 	cout << "CTaskThread::CTaskThread" << endl;
-	m_lpThreadPool = (CThreadPool*)lpvContext;
+	m_lpScheduler = (CScheduler*)lpvContext;
 	m_ThreadID = nThreadID;
 	m_bStop = true;		//µ±Ç°Í£Ö¹
 	m_TaskList.clear();
@@ -79,8 +76,9 @@ void CTaskThread::OnRun()
 		list_temp.clear();
 		do
 		{
-			if (m_bStop)
+			if (m_bStop && m_TaskList.empty())
 			{
+				if(DEBUG) cout << "CTaskThread Stop" << endl;
 				return;
 			}
 			if (DEBUG) cout << "2" << endl;
@@ -103,6 +101,7 @@ void CTaskThread::OnRun()
 			//delete if need
 			if (!(task->commandString().compare("DELETE_NOTIFY")) && !(task->stringData().empty()))
 			{
+				if (DEBUG) cout << "6" << endl;
 				std::lock_guard<std::mutex> lock(m_NotifyMutex);
 
 				for (auto it = m_NotifyList.begin();
@@ -127,43 +126,53 @@ void CTaskThread::OnRun()
 			//add task to notify queue
 			if (!(task->commandString().empty()) && (NULL != task->onCommandTaskSuccess))
 			{
+				if (DEBUG) cout << "7" << endl;
 				std::lock_guard<std::mutex> lock(m_NotifyMutex);
 				m_NotifyList.push_back(task);
 			}
 
+			if (DEBUG) cout << "8" << endl;
+
 			//lua
 			std::string modulePara = task->stringData();
 			std::string commandStr = task->commandString();
-// 			ostringstream ostr;
-// 			ostr << commandStr << "(" << modulePara << ")" << endl;
-			LuaContext* lua = CScheduler::luaContext();
-			std::ifstream ifs("./option_service.lua");
-			ifs.close();
+			//char funcStr[512] = {0};
+ 			//ostr << commandStr << "(" << modulePara << ")" << endl;
+			std::string funcStr;
+			funcStr = "return " + commandStr + "(\"" + modulePara + "\")";
 
-			Config* luaConfig = Config::instance();
-			std::string func;
-			if (luaConfig->findFunction(commandStr, func))
+			if(DEBUG) cout << "funcStr : " << funcStr << endl;
+
+ 			LuaContext* lua = CScheduler::luaContext();
+
+			if (DEBUG) cout << "9" << endl;
+
+			std::string luaRet;
+			try
 			{
-				cout << "Success: " << func << endl;
+				luaRet = lua->executeCode<std::string>(funcStr.c_str());
+				if (DEBUG) cout << "Success : " << luaRet << endl;
 			}
-			else
-			{
-
+			catch (const exception &e) {
+				printf ("load %s exception:%s\n", commandStr.c_str(), e.what());
+				return;
 			}
 
- 			const auto function = lua->readVariable<std::function<std::string(std::string)>>("execute");
- 			std::string luaRet = function(func);
+			if (DEBUG) cout << "10" << endl;
 
 			std::shared_ptr<CMyTask> msgTask = std::make_shared<CMyTask>();
 			msgTask->setCommandString(commandStr);
 			msgTask->setStringData(luaRet.c_str());
 
-			CMessageThread* msgThread = m_lpThreadPool->GetMsgThread();
+			CMessageThread* msgThread = m_lpScheduler->GetMsgThread();
 			msgThread->AddMessage(msgTask);
 
+			
+			if (DEBUG) cout << "11" << endl;
 
 			list_temp.pop_front();
 		}
+
 	}
 }
 

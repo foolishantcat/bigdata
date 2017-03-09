@@ -8,9 +8,10 @@
 #include <thread>
 #include <memory>
 #include "IASObject.h"
-#include "CThreadPool.h"
 #include "Config.h"
 #include "LuaContext.hpp"
+#include "CTaskThread.h"
+#include "CMessageThread.h"
 
 namespace TBAS {
     namespace Core {
@@ -26,6 +27,9 @@ namespace TBAS {
             bool addEventListen(std::shared_ptr<IASObject> arg);
 
 			bool release();
+
+			CTaskThread* GetTaskThread();
+			CMessageThread* GetMsgThread();
 
         private:
             CScheduler();
@@ -43,9 +47,18 @@ namespace TBAS {
                 }
             };
             static SchedulerGarbo Garbo;
-            static CThreadPool* m_ThreadPool;
 			static Config* m_Config;
 			static LuaContext* m_LuaContext;
+
+			bool m_bSurvive;
+
+			CTaskThread* m_ThreadTask;
+			CMessageThread* m_ThreadMessage;
+			int m_ThreadNums;
+
+			std::thread m_Thread;
+
+			std::mutex m_Mutex;
         };
 	} //end for namespace Core
 

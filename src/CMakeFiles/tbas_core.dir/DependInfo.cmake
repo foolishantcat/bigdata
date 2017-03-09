@@ -9,7 +9,6 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/cyc/Core/src/CScheduler.cpp" "/home/cyc/Core/src/CMakeFiles/tbas_core.dir/CScheduler.cpp.o"
   "/home/cyc/Core/src/CTaskThread.cpp" "/home/cyc/Core/src/CMakeFiles/tbas_core.dir/CTaskThread.cpp.o"
   "/home/cyc/Core/src/CThread.cpp" "/home/cyc/Core/src/CMakeFiles/tbas_core.dir/CThread.cpp.o"
-  "/home/cyc/Core/src/CThreadPool.cpp" "/home/cyc/Core/src/CMakeFiles/tbas_core.dir/CThreadPool.cpp.o"
   "/home/cyc/Core/src/Config.cpp" "/home/cyc/Core/src/CMakeFiles/tbas_core.dir/Config.cpp.o"
   "/home/cyc/Core/src/HttpClient.cpp" "/home/cyc/Core/src/CMakeFiles/tbas_core.dir/HttpClient.cpp.o"
   )

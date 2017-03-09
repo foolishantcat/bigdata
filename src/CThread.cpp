@@ -8,8 +8,6 @@
 #include <iostream>
 #include "Global.h"
 #include "CThread.h"
-#include "CThreadPool.h"
-#include "CLock.h"
 #include "CMyTask.h"
 #include "LuaContext.hpp"
 
@@ -41,20 +39,22 @@ bool CThread::Start()
 	return true;
 }
 
+#define DEBUG 0
+
 void CThread::Stop()
 {
 	if (m_Thread_.joinable())
 	{
-		cout << "before join ::[ " << m_Thread_.get_id() << "] | " << endl;
+		if(DEBUG)cout << "before join ::[ " << m_Thread_.get_id() << "] | " << endl;
 		m_Thread_.join();
-		cout << "after join..." << endl;
+		if(DEBUG)cout << "after join..." << endl;
 	}
 }
 
 void* CThread::ThreadProc(void* lpvContex)
 {
 	CThread* lpInstance = NULL;
-	cout << "CThread::ThreadProc()" << endl;
+	if(DEBUG)cout << "CThread::ThreadProc()" << endl;
 	lpInstance = (CThread*)lpvContex;
 	lpInstance->OnRun();
 

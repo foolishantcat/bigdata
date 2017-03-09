@@ -6,7 +6,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/tbas_core.dir/CThread.cpp.o"
   "CMakeFiles/tbas_core.dir/CTaskThread.cpp.o"
   "CMakeFiles/tbas_core.dir/CMessageThread.cpp.o"
-  "CMakeFiles/tbas_core.dir/CThreadPool.cpp.o"
   "libtbas_core.pdb"
   "libtbas_core.a"
 )

@@ -8,5 +8,5 @@ function M:version()
 end
 
 function M:execute()
-    return "option_service for ok";
+    return "option_service for ok",0;
 end

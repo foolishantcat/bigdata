@@ -6743,12 +6743,14 @@ memory
 -
 IASObject.h
 src/IASObject.h
-CThreadPool.h
-src/CThreadPool.h
 Config.h
 src/Config.h
 LuaContext.hpp
 src/LuaContext.hpp
+CTaskThread.h
+src/CTaskThread.h
+CMessageThread.h
+src/CMessageThread.h
 
 src/CSemaphore.h
 mutex
@@ -6777,22 +6779,6 @@ thread
 -
 IASObject.h
 src/IASObject.h
-
-src/CThreadPool.h
-list
--
-thread
--
-Global.h
-src/Global.h
-IASObject.h
-src/IASObject.h
-CMessageThread.h
-src/CMessageThread.h
-CSemaphore.h
-src/CSemaphore.h
-CTaskThread.h
-src/CTaskThread.h
 
 src/Config.h
 PlatformMacros.h

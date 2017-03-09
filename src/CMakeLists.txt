@@ -32,8 +32,6 @@ set(SOURCE_FILES Config.cpp Config.h HttpClient.cpp HttpClient.h
         CTaskThread.cpp
         CMessageThread.h
         CMessageThread.cpp
-        CThreadPool.h
-        CThreadPool.cpp
         Global.h
         CSemaphore.h
         IASObject.h)

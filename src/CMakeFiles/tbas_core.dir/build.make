@@ -225,30 +225,6 @@ src/CMakeFiles/tbas_core.dir/CMessageThread.cpp.o.provides: src/CMakeFiles/tbas_
 src/CMakeFiles/tbas_core.dir/CMessageThread.cpp.o.provides.build: src/CMakeFiles/tbas_core.dir/CMessageThread.cpp.o
 
 
-src/CMakeFiles/tbas_core.dir/CThreadPool.cpp.o: src/CMakeFiles/tbas_core.dir/flags.make
-src/CMakeFiles/tbas_core.dir/CThreadPool.cpp.o: src/CThreadPool.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cyc/Core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object src/CMakeFiles/tbas_core.dir/CThreadPool.cpp.o"
-	cd /home/cyc/Core/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tbas_core.dir/CThreadPool.cpp.o -c /home/cyc/Core/src/CThreadPool.cpp
-
-src/CMakeFiles/tbas_core.dir/CThreadPool.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tbas_core.dir/CThreadPool.cpp.i"
-	cd /home/cyc/Core/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cyc/Core/src/CThreadPool.cpp > CMakeFiles/tbas_core.dir/CThreadPool.cpp.i
-
-src/CMakeFiles/tbas_core.dir/CThreadPool.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tbas_core.dir/CThreadPool.cpp.s"
-	cd /home/cyc/Core/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cyc/Core/src/CThreadPool.cpp -o CMakeFiles/tbas_core.dir/CThreadPool.cpp.s
-
-src/CMakeFiles/tbas_core.dir/CThreadPool.cpp.o.requires:
-
-.PHONY : src/CMakeFiles/tbas_core.dir/CThreadPool.cpp.o.requires
-
-src/CMakeFiles/tbas_core.dir/CThreadPool.cpp.o.provides: src/CMakeFiles/tbas_core.dir/CThreadPool.cpp.o.requires
-	$(MAKE) -f src/CMakeFiles/tbas_core.dir/build.make src/CMakeFiles/tbas_core.dir/CThreadPool.cpp.o.provides.build
-.PHONY : src/CMakeFiles/tbas_core.dir/CThreadPool.cpp.o.provides
-
-src/CMakeFiles/tbas_core.dir/CThreadPool.cpp.o.provides.build: src/CMakeFiles/tbas_core.dir/CThreadPool.cpp.o
-
-
 # Object files for target tbas_core
 tbas_core_OBJECTS = \
 "CMakeFiles/tbas_core.dir/Config.cpp.o" \
@@ -257,8 +233,7 @@ tbas_core_OBJECTS = \
 "CMakeFiles/tbas_core.dir/CMyTask.cpp.o" \
 "CMakeFiles/tbas_core.dir/CThread.cpp.o" \
 "CMakeFiles/tbas_core.dir/CTaskThread.cpp.o" \
-"CMakeFiles/tbas_core.dir/CMessageThread.cpp.o" \
-"CMakeFiles/tbas_core.dir/CThreadPool.cpp.o"
+"CMakeFiles/tbas_core.dir/CMessageThread.cpp.o"
 
 # External object files for target tbas_core
 tbas_core_EXTERNAL_OBJECTS =
@@ -270,10 +245,9 @@ src/libtbas_core.a: src/CMakeFiles/tbas_core.dir/CMyTask.cpp.o
 src/libtbas_core.a: src/CMakeFiles/tbas_core.dir/CThread.cpp.o
 src/libtbas_core.a: src/CMakeFiles/tbas_core.dir/CTaskThread.cpp.o
 src/libtbas_core.a: src/CMakeFiles/tbas_core.dir/CMessageThread.cpp.o
-src/libtbas_core.a: src/CMakeFiles/tbas_core.dir/CThreadPool.cpp.o
 src/libtbas_core.a: src/CMakeFiles/tbas_core.dir/build.make
 src/libtbas_core.a: src/CMakeFiles/tbas_core.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/cyc/Core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX static library libtbas_core.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/cyc/Core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX static library libtbas_core.a"
 	cd /home/cyc/Core/src && $(CMAKE_COMMAND) -P CMakeFiles/tbas_core.dir/cmake_clean_target.cmake
 	cd /home/cyc/Core/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/tbas_core.dir/link.txt --verbose=$(VERBOSE)
 
@@ -289,7 +263,6 @@ src/CMakeFiles/tbas_core.dir/requires: src/CMakeFiles/tbas_core.dir/CMyTask.cpp.
 src/CMakeFiles/tbas_core.dir/requires: src/CMakeFiles/tbas_core.dir/CThread.cpp.o.requires
 src/CMakeFiles/tbas_core.dir/requires: src/CMakeFiles/tbas_core.dir/CTaskThread.cpp.o.requires
 src/CMakeFiles/tbas_core.dir/requires: src/CMakeFiles/tbas_core.dir/CMessageThread.cpp.o.requires
-src/CMakeFiles/tbas_core.dir/requires: src/CMakeFiles/tbas_core.dir/CThreadPool.cpp.o.requires
 
 .PHONY : src/CMakeFiles/tbas_core.dir/requires
 

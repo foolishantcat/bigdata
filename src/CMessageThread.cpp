@@ -1,8 +1,8 @@
 #include <iostream>
 #include "CMessageThread.h"
-#include "CLock.h"
-#include "CThreadPool.h"
 #include "Global.h"
+#include "CTaskThread.h"
+#include "CScheduler.h"
 
 using namespace std;
 using namespace TBAS::Core;
@@ -14,7 +14,7 @@ typedef std::mutex CMutex;
 CMessageThread::CMessageThread(int nThreadID, void* lpvContext)
 {
 	cout << "CMessageThread::CMessageThread" << endl;
-	m_lpThreadPool = (CThreadPool*)lpvContext;
+	m_lpScheduler = (CScheduler*)lpvContext;
 	m_ThreadID = nThreadID;
 	m_bStop = true;		//µ±Ç°Í£Ö¹
 	m_MessageList.clear();
@@ -53,14 +53,14 @@ void CMessageThread::Stop()
 	CThread::Stop();
 }
 
-#define DEBUG 1
+#define DEBUG 0
 
 //excute call-back function
 void CMessageThread::OnRun()
 {
 	if(DEBUG) cout << "CMessageThread::OnRun()  " << m_ThreadID << endl;
 
-	CTaskThread* taskThread = m_lpThreadPool->GetTaskThread();
+	CTaskThread* taskThread = m_lpScheduler->GetTaskThread();
 
 	while (true)
 	{
@@ -70,8 +70,9 @@ void CMessageThread::OnRun()
 		if (DEBUG) cout << "1" << endl;
 		do 
 		{
-			if (m_bStop)
+			if (m_bStop && m_MessageList.empty())
 			{
+				if (DEBUG) cout << "CMessageThread Stop" << endl;
 				return;
 			}
 			if (DEBUG) cout << "2" << endl;

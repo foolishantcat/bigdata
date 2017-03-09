@@ -11,7 +11,7 @@ namespace TBAS
 {
 	namespace Core
 	{
-		class CThreadPool;
+		class CScheduler;
 		class CMessageThread : public CThread
 		{
 		public:
@@ -36,7 +36,7 @@ namespace TBAS
 			CMutex& MsgMutex();
 
 		private:
-			CThreadPool* m_lpThreadPool;
+			CScheduler* m_lpScheduler;
 
 			bool m_bStop;
 

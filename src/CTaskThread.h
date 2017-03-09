@@ -13,7 +13,7 @@ namespace TBAS
 {
 	namespace Core
 	{
-		class CThreadPool;
+		class CScheduler;
 		class CTaskThread : public CThread
 		{
 		public :
@@ -40,7 +40,7 @@ namespace TBAS
 			CSemaphore& SemTask();
 
 		private:
-			CThreadPool* m_lpThreadPool;
+			CScheduler* m_lpScheduler;
 
 			bool m_bStop;
 

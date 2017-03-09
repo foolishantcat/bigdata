@@ -6,21 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/home/cyc/Core/src/CLock.h
-mutex
--
-
 /home/cyc/Core/src/CMessageThread.cpp
 iostream
 -
 CMessageThread.h
 /home/cyc/Core/src/CMessageThread.h
-CLock.h
-/home/cyc/Core/src/CLock.h
-CThreadPool.h
-/home/cyc/Core/src/CThreadPool.h
 Global.h
 /home/cyc/Core/src/Global.h
+CTaskThread.h
+/home/cyc/Core/src/CTaskThread.h
+CScheduler.h
+/home/cyc/Core/src/CScheduler.h
 
 /home/cyc/Core/src/CMessageThread.h
 memory
@@ -59,12 +55,14 @@ CScheduler.h
 /home/cyc/Core/src/CScheduler.h
 Global.h
 /home/cyc/Core/src/Global.h
-CThreadPool.h
-/home/cyc/Core/src/CThreadPool.h
 LuaContext.hpp
 /home/cyc/Core/src/LuaContext.hpp
 CMyTask.h
 /home/cyc/Core/src/CMyTask.h
+CTaskThread.h
+/home/cyc/Core/src/CTaskThread.h
+CMessageThread.h
+/home/cyc/Core/src/CMessageThread.h
 
 /home/cyc/Core/src/CScheduler.h
 thread
@@ -73,12 +71,14 @@ memory
 -
 IASObject.h
 /home/cyc/Core/src/IASObject.h
-CThreadPool.h
-/home/cyc/Core/src/CThreadPool.h
 Config.h
 /home/cyc/Core/src/Config.h
 LuaContext.hpp
 /home/cyc/Core/src/LuaContext.hpp
+CTaskThread.h
+/home/cyc/Core/src/CTaskThread.h
+CMessageThread.h
+/home/cyc/Core/src/CMessageThread.h
 
 /home/cyc/Core/src/CSemaphore.h
 mutex
@@ -93,18 +93,12 @@ fstream
 -
 CTaskThread.h
 /home/cyc/Core/src/CTaskThread.h
-CThreadPool.h
-/home/cyc/Core/src/CThreadPool.h
-CLock.h
-/home/cyc/Core/src/CLock.h
+CScheduler.h
+/home/cyc/Core/src/CScheduler.h
 LuaContext.hpp
 /home/cyc/Core/src/LuaContext.hpp
 CMyTask.h
 /home/cyc/Core/src/CMyTask.h
-CLock.h
-/home/cyc/Core/src/CLock.h
-CScheduler.h
-/home/cyc/Core/src/CScheduler.h
 
 /home/cyc/Core/src/CTaskThread.h
 mutex
@@ -133,10 +127,6 @@ Global.h
 /home/cyc/Core/src/Global.h
 CThread.h
 /home/cyc/Core/src/CThread.h
-CThreadPool.h
-/home/cyc/Core/src/CThreadPool.h
-CLock.h
-/home/cyc/Core/src/CLock.h
 CMyTask.h
 /home/cyc/Core/src/CMyTask.h
 LuaContext.hpp
@@ -149,40 +139,6 @@ thread
 -
 IASObject.h
 /home/cyc/Core/src/IASObject.h
-
-/home/cyc/Core/src/CThreadPool.cpp
-iostream
--
-thread
--
-Global.h
-/home/cyc/Core/src/Global.h
-CLock.h
-/home/cyc/Core/src/CLock.h
-CScheduler.h
-/home/cyc/Core/src/CScheduler.h
-CMessageThread.h
-/home/cyc/Core/src/CMessageThread.h
-CTaskThread.h
-/home/cyc/Core/src/CTaskThread.h
-CThreadPool.h
-/home/cyc/Core/src/CThreadPool.h
-
-/home/cyc/Core/src/CThreadPool.h
-list
--
-thread
--
-Global.h
-/home/cyc/Core/src/Global.h
-IASObject.h
-/home/cyc/Core/src/IASObject.h
-CMessageThread.h
-/home/cyc/Core/src/CMessageThread.h
-CSemaphore.h
-/home/cyc/Core/src/CSemaphore.h
-CTaskThread.h
-/home/cyc/Core/src/CTaskThread.h
 
 /home/cyc/Core/src/Config.cpp
 memory
