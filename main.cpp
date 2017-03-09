@@ -44,11 +44,39 @@ void testConfig_Async_Sync()
 
 	std::cout << "return func string : {" << func << "}" << endl;
 
+	std::string jsonstring = "{\
+		\"name\": \"BeJson\",\
+		\"url\" : \"http://www.bejson.com\",\
+	\"page\" : 88,\
+		\"isNonProfit\" : true,\
+		\"address\" : {\
+		\"street\": \"科技园路.\",\
+		\"city\" : \"江苏苏州\",\
+		\"country\" : \"中国\"\
+	}, \
+		\"links\" : [\
+	{ \
+		\"name\": \"Google\",\
+		\"url\" : \"http://www.google.com\"\
+	},\
+	{\
+		\"name\": \"Baidu\",\
+		\"url\" : \"http://www.baidu.com\"\
+	},\
+	{\
+		\"name\": \"SoSo\",\
+		\"url\" : \"http://www.SoSo.com\"\
+	}\
+		]\
+}";
+
+	cout << "Json String : " << "\n" << jsonstring << endl;
+
 	//模拟异步调用
 	std::shared_ptr<CMyTask> task = std::make_shared<CMyTask>();
 
 	task->setCommandString(func);
-	task->setStringData("fuck");
+	task->setStringData(jsonstring);
 
 	task->onCommandTaskSuccess = fuck;
 
@@ -57,14 +85,17 @@ void testConfig_Async_Sync()
 	//模拟同步调用
 	std::shared_ptr<CMyTask> task_1 = std::make_shared<CMyTask>();
 	task_1->setCommandString(func);
-	task_1->setStringData("fuck");
+
+
+	task_1->setStringData(jsonstring);
 	task_1->onCommandTaskSuccess = NULL;
 	scheduler->syncCommand(task_1);
 
+	cout << "before unloadModule" << endl;
 	//卸载当前模块是必要的
-	config->unloadModule("config.lua", lua);
-	config->unloadModule("option_service.lua", lua);
-	config->unloadModule("depend_service.lua", lua);
+	//config->unloadModule("option_service.lua", lua);
+	//config->unloadModule("depend_service.lua", lua);
+	//config->unloadModule("config.lua", lua);
 
 	//这个最后退出app调用
 	scheduler->release();
@@ -98,13 +129,39 @@ void testConfig_Sync()
 	std::shared_ptr<CMyTask> task = std::make_shared<CMyTask>();
 
 	task->setCommandString(func);
-	task->setStringData("imay_success");
+	std::string jsonstring = "{\
+		\"name\": \"BeJson\",\
+		\"url\" : \"http://www.bejson.com\",\
+	\"page\" : 88,\
+		\"isNonProfit\" : true,\
+		\"address\" : {\
+		\"street\": \"科技园路.\",\
+		\"city\" : \"江苏苏州\",\
+		\"country\" : \"中国\"\
+	}, \
+		\"links\" : [\
+	{ \
+		\"name\": \"Google\",\
+		\"url\" : \"http://www.google.com\"\
+	},\
+	{\
+		\"name\": \"Baidu\",\
+		\"url\" : \"http://www.baidu.com\"\
+	},\
+	{\
+		\"name\": \"SoSo\",\
+		\"url\" : \"http://www.SoSo.com\"\
+	}\
+		]\
+}";
+	//cout << "Json String : " << "\n" << jsonstring << endl;
+	task->setStringData(jsonstring);
 
 	scheduler->syncCommand(task);
 
-	config->unloadModule("config.lua", lua);
-	config->unloadModule("option_service.lua", lua);
-	config->unloadModule("depend_service.lua", lua);
+	//config->unloadModule("config.lua", lua);
+	//config->unloadModule("option_service.lua", lua);
+	//config->unloadModule("depend_service.lua", lua);
 
 	scheduler->release();
 }
@@ -114,7 +171,7 @@ int main()
 	//CScheduler* scheduler = CScheduler::instance();
 	testConfig_Async_Sync();
 
-	testConfig_Sync();
+	//testConfig_Sync();
 
     return 0;
 }

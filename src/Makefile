@@ -233,33 +233,6 @@ CTaskThread.cpp.s:
 	cd /home/cyc/Core && $(MAKE) -f src/CMakeFiles/tbas_core.dir/build.make src/CMakeFiles/tbas_core.dir/CTaskThread.cpp.s
 .PHONY : CTaskThread.cpp.s
 
-CThread.o: CThread.cpp.o
-
-.PHONY : CThread.o
-
-# target to build an object file
-CThread.cpp.o:
-	cd /home/cyc/Core && $(MAKE) -f src/CMakeFiles/tbas_core.dir/build.make src/CMakeFiles/tbas_core.dir/CThread.cpp.o
-.PHONY : CThread.cpp.o
-
-CThread.i: CThread.cpp.i
-
-.PHONY : CThread.i
-
-# target to preprocess a source file
-CThread.cpp.i:
-	cd /home/cyc/Core && $(MAKE) -f src/CMakeFiles/tbas_core.dir/build.make src/CMakeFiles/tbas_core.dir/CThread.cpp.i
-.PHONY : CThread.cpp.i
-
-CThread.s: CThread.cpp.s
-
-.PHONY : CThread.s
-
-# target to generate assembly for a file
-CThread.cpp.s:
-	cd /home/cyc/Core && $(MAKE) -f src/CMakeFiles/tbas_core.dir/build.make src/CMakeFiles/tbas_core.dir/CThread.cpp.s
-.PHONY : CThread.cpp.s
-
 Config.o: Config.cpp.o
 
 .PHONY : Config.o
@@ -335,9 +308,6 @@ help:
 	@echo "... CTaskThread.o"
 	@echo "... CTaskThread.i"
 	@echo "... CTaskThread.s"
-	@echo "... CThread.o"
-	@echo "... CThread.i"
-	@echo "... CThread.s"
 	@echo "... Config.o"
 	@echo "... Config.i"
 	@echo "... Config.s"

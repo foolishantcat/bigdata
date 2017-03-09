@@ -25,17 +25,22 @@ CMessageThread::~CMessageThread()
 
 }
 
-bool CMessageThread::OnInitThread()
+bool CMessageThread::Push(TASK_OBJ asObject)
 {
-	cout << "CMessageThread::OnInitThread()" << endl;
-	m_bStop = false;
+	m_MessageList.push_back(asObject);
 
 	return true;
 }
 
-bool CMessageThread::Push(TASK_OBJ asObject)
+bool CMessageThread::Start()
 {
-	m_MessageList.push_back(asObject);
+	cout << "CMessageThread::Start()" << endl;
+
+	m_bStop = false;
+
+	std::thread thread_new = std::thread(&CMessageThread::OnRun, this);
+
+	m_Thread_ = std::move(thread_new);
 
 	return true;
 }
@@ -50,10 +55,13 @@ void CMessageThread::Stop()
 
 	} while (0);
 
-	CThread::Stop();
+	if (m_Thread_.joinable())
+	{
+		m_Thread_.join();
+	}
 }
 
-#define DEBUG 0
+#define DEBUG 1
 
 //excute call-back function
 void CMessageThread::OnRun()

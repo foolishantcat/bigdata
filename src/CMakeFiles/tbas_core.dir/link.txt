@@ -1,2 +1,2 @@
-/usr/bin/ar qc libtbas_core.a  CMakeFiles/tbas_core.dir/Config.cpp.o CMakeFiles/tbas_core.dir/HttpClient.cpp.o CMakeFiles/tbas_core.dir/CScheduler.cpp.o CMakeFiles/tbas_core.dir/CMyTask.cpp.o CMakeFiles/tbas_core.dir/CThread.cpp.o CMakeFiles/tbas_core.dir/CTaskThread.cpp.o CMakeFiles/tbas_core.dir/CMessageThread.cpp.o
+/usr/bin/ar qc libtbas_core.a  CMakeFiles/tbas_core.dir/Config.cpp.o CMakeFiles/tbas_core.dir/HttpClient.cpp.o CMakeFiles/tbas_core.dir/CScheduler.cpp.o CMakeFiles/tbas_core.dir/CMyTask.cpp.o CMakeFiles/tbas_core.dir/CTaskThread.cpp.o CMakeFiles/tbas_core.dir/CMessageThread.cpp.o
 /usr/bin/ranlib libtbas_core.a

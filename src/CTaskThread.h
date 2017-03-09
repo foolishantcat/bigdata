@@ -14,11 +14,12 @@ namespace TBAS
 	namespace Core
 	{
 		class CScheduler;
-		class CTaskThread : public CThread
+		class CTaskThread
 		{
 		public :
 			void OnRun();
-			bool OnInitThread();
+			bool Start();
+			void Stop();
 
 		public:
 			CTaskThread(int nThreadID, void* lpvContext);
@@ -30,7 +31,7 @@ namespace TBAS
 			typedef std::mutex CMutex;
 			bool Push(TASK_OBJ_WK asObject);
 			bool Push(TASK_OBJ asObject);
-			void Stop();
+
 
 		public:
 			std::list<TASK_OBJ>& TaskList();
@@ -48,6 +49,7 @@ namespace TBAS
 			std::list<TASK_OBJ_WK> m_NotifyList;
 
 			int m_ThreadID;
+			std::thread m_Thread_;
 
 			CSemaphore m_SemTask;
 

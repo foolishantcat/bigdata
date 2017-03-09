@@ -59,6 +59,7 @@ namespace TBAS {
 			std::thread m_Thread;
 
 			std::mutex m_Mutex;
+			std::mutex m_SyncMutex;		//同步接口锁
         };
 	} //end for namespace Core
 

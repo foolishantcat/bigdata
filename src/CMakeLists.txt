@@ -26,8 +26,6 @@ set(SOURCE_FILES Config.cpp Config.h HttpClient.cpp HttpClient.h
         CScheduler.cpp
         CMyTask.h
         CMyTask.cpp
-        CThread.h
-        CThread.cpp
         CTaskThread.h
         CTaskThread.cpp
         CMessageThread.h

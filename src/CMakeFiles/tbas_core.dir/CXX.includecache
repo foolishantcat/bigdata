@@ -114,24 +114,6 @@ CThread.h
 CSemaphore.h
 /home/cyc/Core/src/CSemaphore.h
 
-/home/cyc/Core/src/CThread.cpp
-list
--
-memory
--
-fstream
--
-iostream
--
-Global.h
-/home/cyc/Core/src/Global.h
-CThread.h
-/home/cyc/Core/src/CThread.h
-CMyTask.h
-/home/cyc/Core/src/CMyTask.h
-LuaContext.hpp
-/home/cyc/Core/src/LuaContext.hpp
-
 /home/cyc/Core/src/CThread.h
 list
 -

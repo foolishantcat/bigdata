@@ -34,23 +34,30 @@ bool CScheduler::release()
 	m_ThreadTask->Stop();
 	m_ThreadMessage->Stop();
 
+	if (DEBUG)cout << "delete m_ThreadTask" << endl;
 	if (NULL != m_ThreadTask)
 	{
 		delete m_ThreadTask;
 		m_ThreadTask = NULL;
 	}
+	if (DEBUG)cout << "delete m_ThreadMessage" << endl;
 	if (NULL != m_ThreadMessage)
 	{
 		delete m_ThreadMessage;
 		m_ThreadMessage = NULL;
 	}
-
-	delete m_LuaContext;
-	m_LuaContext = NULL;
-
-	delete schedulerShared;
-
-	schedulerShared = NULL;
+	if (DEBUG)cout << "delete m_LuaContext" << endl;
+	if (NULL != m_LuaContext)
+	{
+		delete m_LuaContext;
+		m_LuaContext = NULL;
+	}
+	if (DEBUG)cout << "delete schedulerShared" << endl;
+	if (NULL != schedulerShared)
+	{
+		delete schedulerShared;
+		schedulerShared = NULL;
+	}
 
 	if(DEBUG) cout << "after CScheduler::release()" << endl;
 
@@ -118,13 +125,16 @@ std::shared_ptr<IASObject> CScheduler::syncCommand(std::shared_ptr<IASObject> ar
 	LuaContext* lua = CScheduler::luaContext();
 	
 	std::string funcStr;
-	funcStr = "return " + commandStr + "(\"" + modulePara + "\")";
+	funcStr = "return " + commandStr + "(inSyncString)";
 
 	if (DEBUG) cout << "sync funcStr : " << funcStr << endl;
 
 	std::string luaRet;
 	try
 	{
+		std::lock_guard<std::mutex> lock(m_SyncMutex);
+
+		lua->writeVariable("inSyncString", modulePara);
 		luaRet = lua->executeCode<std::string>(funcStr.c_str());
 		if (DEBUG) cout << "sync Success : " << luaRet << endl;
 	}

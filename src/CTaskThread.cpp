@@ -27,10 +27,15 @@ CTaskThread::~CTaskThread()
 
 }
 
-bool CTaskThread::OnInitThread()
+bool CTaskThread::Start()
 {
-	cout << "CTaskThread::OnInitThread()" << endl;
+	cout << "CTaskThread::Start()" << endl;
+
 	m_bStop = false;
+
+	std::thread thread_new = std::thread(&CTaskThread::OnRun, this);
+
+	m_Thread_ = std::move(thread_new);
 
 	return true;
 }
@@ -45,7 +50,11 @@ void CTaskThread::Stop()
 
 	} while (0);
 
-	CThread::Stop();
+
+	if (m_Thread_.joinable())
+	{
+		m_Thread_.join();
+	}
 }
 
 bool CTaskThread::Push(TASK_OBJ asObject)
@@ -138,10 +147,12 @@ void CTaskThread::OnRun()
 			std::string commandStr = task->commandString();
 			//char funcStr[512] = {0};
  			//ostr << commandStr << "(" << modulePara << ")" << endl;
-			std::string funcStr;
-			funcStr = "return " + commandStr + "(\"" + modulePara + "\")";
+			std::string execStr;
+			//execStr = "return " + commandStr + "(\"" + modulePara + "\")";
+			execStr = "return " + commandStr + "(inAsyncString)";
+			
 
-			if(DEBUG) cout << "funcStr : " << funcStr << endl;
+			if(DEBUG) cout << "funcStr : " << execStr << endl;
 
  			LuaContext* lua = CScheduler::luaContext();
 
@@ -150,7 +161,8 @@ void CTaskThread::OnRun()
 			std::string luaRet;
 			try
 			{
-				luaRet = lua->executeCode<std::string>(funcStr.c_str());
+				lua->writeVariable("inAsyncString", modulePara);
+				luaRet = lua->executeCode<std::string>(execStr.c_str());
 				if (DEBUG) cout << "Success : " << luaRet << endl;
 			}
 			catch (const exception &e) {

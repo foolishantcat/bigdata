@@ -153,33 +153,9 @@ src/CMakeFiles/tbas_core.dir/CMyTask.cpp.o.provides: src/CMakeFiles/tbas_core.di
 src/CMakeFiles/tbas_core.dir/CMyTask.cpp.o.provides.build: src/CMakeFiles/tbas_core.dir/CMyTask.cpp.o
 
 
-src/CMakeFiles/tbas_core.dir/CThread.cpp.o: src/CMakeFiles/tbas_core.dir/flags.make
-src/CMakeFiles/tbas_core.dir/CThread.cpp.o: src/CThread.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cyc/Core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/CMakeFiles/tbas_core.dir/CThread.cpp.o"
-	cd /home/cyc/Core/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tbas_core.dir/CThread.cpp.o -c /home/cyc/Core/src/CThread.cpp
-
-src/CMakeFiles/tbas_core.dir/CThread.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tbas_core.dir/CThread.cpp.i"
-	cd /home/cyc/Core/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cyc/Core/src/CThread.cpp > CMakeFiles/tbas_core.dir/CThread.cpp.i
-
-src/CMakeFiles/tbas_core.dir/CThread.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tbas_core.dir/CThread.cpp.s"
-	cd /home/cyc/Core/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cyc/Core/src/CThread.cpp -o CMakeFiles/tbas_core.dir/CThread.cpp.s
-
-src/CMakeFiles/tbas_core.dir/CThread.cpp.o.requires:
-
-.PHONY : src/CMakeFiles/tbas_core.dir/CThread.cpp.o.requires
-
-src/CMakeFiles/tbas_core.dir/CThread.cpp.o.provides: src/CMakeFiles/tbas_core.dir/CThread.cpp.o.requires
-	$(MAKE) -f src/CMakeFiles/tbas_core.dir/build.make src/CMakeFiles/tbas_core.dir/CThread.cpp.o.provides.build
-.PHONY : src/CMakeFiles/tbas_core.dir/CThread.cpp.o.provides
-
-src/CMakeFiles/tbas_core.dir/CThread.cpp.o.provides.build: src/CMakeFiles/tbas_core.dir/CThread.cpp.o
-
-
 src/CMakeFiles/tbas_core.dir/CTaskThread.cpp.o: src/CMakeFiles/tbas_core.dir/flags.make
 src/CMakeFiles/tbas_core.dir/CTaskThread.cpp.o: src/CTaskThread.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cyc/Core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/CMakeFiles/tbas_core.dir/CTaskThread.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cyc/Core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/CMakeFiles/tbas_core.dir/CTaskThread.cpp.o"
 	cd /home/cyc/Core/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tbas_core.dir/CTaskThread.cpp.o -c /home/cyc/Core/src/CTaskThread.cpp
 
 src/CMakeFiles/tbas_core.dir/CTaskThread.cpp.i: cmake_force
@@ -203,7 +179,7 @@ src/CMakeFiles/tbas_core.dir/CTaskThread.cpp.o.provides.build: src/CMakeFiles/tb
 
 src/CMakeFiles/tbas_core.dir/CMessageThread.cpp.o: src/CMakeFiles/tbas_core.dir/flags.make
 src/CMakeFiles/tbas_core.dir/CMessageThread.cpp.o: src/CMessageThread.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cyc/Core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object src/CMakeFiles/tbas_core.dir/CMessageThread.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cyc/Core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/CMakeFiles/tbas_core.dir/CMessageThread.cpp.o"
 	cd /home/cyc/Core/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tbas_core.dir/CMessageThread.cpp.o -c /home/cyc/Core/src/CMessageThread.cpp
 
 src/CMakeFiles/tbas_core.dir/CMessageThread.cpp.i: cmake_force
@@ -231,7 +207,6 @@ tbas_core_OBJECTS = \
 "CMakeFiles/tbas_core.dir/HttpClient.cpp.o" \
 "CMakeFiles/tbas_core.dir/CScheduler.cpp.o" \
 "CMakeFiles/tbas_core.dir/CMyTask.cpp.o" \
-"CMakeFiles/tbas_core.dir/CThread.cpp.o" \
 "CMakeFiles/tbas_core.dir/CTaskThread.cpp.o" \
 "CMakeFiles/tbas_core.dir/CMessageThread.cpp.o"
 
@@ -242,12 +217,11 @@ src/libtbas_core.a: src/CMakeFiles/tbas_core.dir/Config.cpp.o
 src/libtbas_core.a: src/CMakeFiles/tbas_core.dir/HttpClient.cpp.o
 src/libtbas_core.a: src/CMakeFiles/tbas_core.dir/CScheduler.cpp.o
 src/libtbas_core.a: src/CMakeFiles/tbas_core.dir/CMyTask.cpp.o
-src/libtbas_core.a: src/CMakeFiles/tbas_core.dir/CThread.cpp.o
 src/libtbas_core.a: src/CMakeFiles/tbas_core.dir/CTaskThread.cpp.o
 src/libtbas_core.a: src/CMakeFiles/tbas_core.dir/CMessageThread.cpp.o
 src/libtbas_core.a: src/CMakeFiles/tbas_core.dir/build.make
 src/libtbas_core.a: src/CMakeFiles/tbas_core.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/cyc/Core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX static library libtbas_core.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/cyc/Core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX static library libtbas_core.a"
 	cd /home/cyc/Core/src && $(CMAKE_COMMAND) -P CMakeFiles/tbas_core.dir/cmake_clean_target.cmake
 	cd /home/cyc/Core/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/tbas_core.dir/link.txt --verbose=$(VERBOSE)
 
@@ -260,7 +234,6 @@ src/CMakeFiles/tbas_core.dir/requires: src/CMakeFiles/tbas_core.dir/Config.cpp.o
 src/CMakeFiles/tbas_core.dir/requires: src/CMakeFiles/tbas_core.dir/HttpClient.cpp.o.requires
 src/CMakeFiles/tbas_core.dir/requires: src/CMakeFiles/tbas_core.dir/CScheduler.cpp.o.requires
 src/CMakeFiles/tbas_core.dir/requires: src/CMakeFiles/tbas_core.dir/CMyTask.cpp.o.requires
-src/CMakeFiles/tbas_core.dir/requires: src/CMakeFiles/tbas_core.dir/CThread.cpp.o.requires
 src/CMakeFiles/tbas_core.dir/requires: src/CMakeFiles/tbas_core.dir/CTaskThread.cpp.o.requires
 src/CMakeFiles/tbas_core.dir/requires: src/CMakeFiles/tbas_core.dir/CMessageThread.cpp.o.requires
 
